@@ -1,9 +1,15 @@
-import {InformationBlock} from './components/UI/information-block/Information-block';
-
+import { PlanCard } from "./components/UI/plan-card/Plan-card";
+const cardState = {
+  plan: 'start',
+  perks: ['1 слайд (обложка)', 'составление текста инфографики', 'дизайн под вашу аудиторию', 'сроки: 1-2 рабочих дня'],
+  price: '599',
+  discount: '',
+  prevPrice: ''
+}
 function App() {
   return (
     <div className='app'>
-      <InformationBlock heading='oh wow!' description='get a perfect 70% discount!'/>
+      <PlanCard data={cardState}/>
     </div>
   );
 }
