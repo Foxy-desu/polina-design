@@ -1,0 +1,11 @@
+@mixin centerredContentVH {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin slightBoxShadow {
+    -webkit-box-shadow: 0px 0px 0px 1px rgba(75, 0, 128, 1) inset;
+    -moz-box-shadow: 0px 0px 0px 1px rgba(75, 0, 128, 1) inset;
+    box-shadow: 0px 0px 0px 1px rgba(75, 0, 128, 1) inset;
+}
