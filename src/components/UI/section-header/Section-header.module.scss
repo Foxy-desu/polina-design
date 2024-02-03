@@ -1,0 +1,30 @@
+@import '../../../styles/abstracts/mixins';
+@import '../../../styles/abstracts/variables';
+
+.section-header {
+
+
+    @include centerredContentVH(center, flex-start);
+    position: relative;
+    height: 90px;
+    overflow: hidden;
+
+    &__text {
+        
+        color: $clr-secondary-lt;
+        font-weight: $fw-thkst;
+        font-size: $fs-lgst;
+        text-transform: uppercase;
+    }
+
+    &__decoration {
+        position: absolute;
+        top: -14px;
+        left: 0;
+
+        &_shifted {
+            @extend .section-header__decoration;
+            left: -10px;
+        }
+    }
+}
