@@ -4,12 +4,24 @@
 .information-block {
     
     &__heading {
-        background-color: $clr-primary;
+        box-sizing: content-box;
+        width: fit-content;
+        color: $clr-base-dk;
+        font-weight: $fw-thk;
+        background-color: $clr-secondary;
+        padding: 0 9px;
+        line-height: 133%;
     }
 
+    &__desc {
+        padding-left: 9px;
+        line-height: 133%;
+    } 
     
 }
 
 .accent {
-        background-color: red;
+        background-color: $clr-primary;
+        font-weight: $fw-thkr-plus;
+        padding: 0 5px;
     }

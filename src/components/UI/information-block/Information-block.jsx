@@ -10,9 +10,9 @@ const InformationBlock = (props) => {
         return result;
     }
 
-    return <div className={styles.information-block}>
-        <h3 className={styles.information-block__heading}>{heading}</h3>
-        <p className={styles.information-block__desc} dangerouslySetInnerHTML={{__html: wrapInSpan(description)}}></p>
+    return <div className={styles['information-block']}>
+        <h3 className={styles['information-block__heading']}>{heading}</h3>
+        <p className={styles['information-block__desc']} dangerouslySetInnerHTML={{__html: wrapInSpan(description)}}></p>
     </div>
 }
 
