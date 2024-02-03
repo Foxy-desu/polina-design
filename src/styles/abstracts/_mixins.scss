@@ -1,7 +1,7 @@
-@mixin centerredContentVH {
+@mixin centerredContentVH($cross: center, $main: center) {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: $main;
+    align-items: $cross;
 }
 
 @mixin slightBoxShadow {
