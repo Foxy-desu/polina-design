@@ -1,0 +1,36 @@
+@import '../../../styles/abstracts/variables';
+@import '../../../styles/abstracts/mixins';
+
+.btn {
+    @include centerredContentVH;
+    width: 255px;
+    height: 38px;
+    font-size: $fs-tny;
+    font-weight: $fw-thk;
+    color: $clr-lt;
+    background-color: $clr-base;
+    border: 1px solid $clr-ltr;
+    border-radius: 59px;
+
+    &_colored {
+        color: $clr-base-dk;
+        background-color: $clr-secondary;
+        border: 1px solid $clr-secondary;
+
+        &_lg {
+            @extend .btn_colored;
+            width: 167px;
+            height: 57px;
+            font-weight: $fw-thkr;
+            padding-bottom: 3px;
+        }
+    }
+
+    &:hover {
+        @media (hover: hover) {
+            cursor: pointer;
+            @include slightBoxShadow;
+        }
+    }
+
+}
