@@ -1,0 +1,15 @@
+@import '../../../styles/abstracts/mixins';
+@import '../../../styles/abstracts/variables';
+
+.information-block {
+    
+    &__heading {
+        background-color: $clr-primary;
+    }
+
+    
+}
+
+.accent {
+        background-color: red;
+    }
