@@ -1,0 +1,40 @@
+@import '../../../styles/abstracts/mixins';
+@import '../../../styles/abstracts/variables';
+
+.plan-card {
+    @include centerredContentVH(center, flex-start, column);
+    width: 255px;
+    height: 500px;
+    padding: 27px 25px 44px;
+    border: 1px solid rgb(133, 255, 90);
+    border-radius: 8.71px;
+
+    &_dark {
+        background: $clr-rad-grad-violet;
+
+    }
+
+    &_light {
+        background: $clr-rad-grad-pink;
+    }
+
+    &_glowing {
+        box-shadow: 0px 0px 100px 0px rgb(133, 255, 90);
+    }
+
+    &__card-header {
+        margin-bottom: auto;
+    };
+
+    &__card-list {
+        margin: auto 0 85px 0;
+    }
+
+    &__card-prices {
+        align-self: flex-end;
+    }
+
+    &__card-btn {
+        margin: auto 0 0 0;
+    }
+}
