@@ -1,6 +1,7 @@
 import React from 'react';
-import styles from './Button.module.scss';
+import styles from './button.module.scss';
 
+//TODO: the component is dirty. make it clear
 const Button =(props)=> {
     const {content, type=''} = props;
     const additionalStyle = getStyle(checkType(type));
