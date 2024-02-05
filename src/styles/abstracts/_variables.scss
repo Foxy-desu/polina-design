@@ -1,11 +1,17 @@
+//solid colors
 $clr-base: rgb(66, 1, 206);
 $clr-base-dk: rgb(50, 0, 155);
 $clr-primary: rgb(250, 0, 255);
 $clr-secondary: rgb(133, 255, 90);
-$clr-secondary-lt: rgb(244, 245, 194);
+$clr-secondary-lt: rgb(169, 255, 138);;
+$clr-secondary-ltr: rgb(244, 245, 194);
 $clr-lt: rgb(228, 228, 243);
 $clr-ltr: rgb(255, 255, 255);
 
+//gradients
+$clr-rad-grad-violet: radial-gradient(93.00% 93.00% at 50% 7.000000000000001%,rgb(143, 0, 255),rgb(81, 14, 225) 82.813%);
+$clr-rad-grad-pink: radial-gradient(134.00% 134.00% at 50% 0%,rgb(235, 0, 255),rgb(81, 14, 225) 82.813%);
+$clr-rad-grad-blue: linear-gradient(180.00deg, rgb(105, 34, 255),rgb(66, 0, 205) 100%),rgb(217, 217, 217);
 
 //font family
 $ff-base: Montserrat;
@@ -13,6 +19,7 @@ $ff-base: Montserrat;
 //font size
 $fs-base: 16px;
 $fs-tny: 14px;
+$fs-tnst: 10px;
 $fs-sml: 20px;
 $fs-med: 24px;
 $fs-med-plus: 25.5px;
