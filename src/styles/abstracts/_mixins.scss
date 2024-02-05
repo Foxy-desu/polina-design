@@ -1,5 +1,6 @@
-@mixin centerredContentVH($cross: center, $main: center) {
+@mixin centerredContentVH($cross: center, $main: center, $direction: row) {
     display: flex;
+    flex-direction: $direction;
     justify-content: $main;
     align-items: $cross;
 }
