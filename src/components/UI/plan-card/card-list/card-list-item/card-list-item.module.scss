@@ -1,0 +1,11 @@
+@import '../../../../../styles/abstracts/mixins';
+@import '../../../../../styles/abstracts/variables';
+
+.card-list__item {
+    font-size: $fs-tny;
+    line-height: 100%;
+    
+    &::marker {
+        font-size: $fs-tnst;
+    }
+}
