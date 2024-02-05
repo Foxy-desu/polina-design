@@ -1,19 +1,24 @@
 import React from "react";
-import {Button} from "../button/Button";
+import {Button} from "../button/button";
 import { PerksListItem } from "./perks-list-item/Perks-list-item";
 import styles from './Plan-card.module.scss';
 
-//TODO: implement key prop for each list item (hashing perhaps?)
 //TODO: implement styles
 
 const PlanCard = (props)=> {
     const {plan, perks, price, prevPrice} = props.data;
 
+    function createComponentKey(str) {
+        return str.split('').reduce((prevHash, currVal) =>
+          (((prevHash << 5) - prevHash) + currVal.charCodeAt(0))|0, 0);
+    };
+
     function listPerks(perks) {
         return perks.map((perk)=> {
-            return <PerksListItem content={perk}/> 
+            const hashed = createComponentKey(perk);
+            return <PerksListItem content={perk} key={hashed}/> 
         })
-    }
+    };
 
     return <article>
         <h3>{plan}</h3>
