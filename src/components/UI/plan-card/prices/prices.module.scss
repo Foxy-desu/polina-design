@@ -1,0 +1,27 @@
+@import '../../../../styles/abstracts/mixins';
+@import '../../../../styles/abstracts/variables';
+
+.prices {
+    text-transform: uppercase;
+    
+    &__current {
+        @extend .prices;
+        color: $clr-secondary-ltr;
+        font-size: $fs-lg;
+        font-weight: $fw-thkr;
+        font-style: italic;
+        line-height: 100%;
+        padding-right: 10px
+    }
+
+    &__previous {
+        @extend .prices;
+        color: $clr-secondary-lt;
+        font-size: $fs-sml;
+        line-height: 133.4%;
+        font-weight: $fw-thn;
+        text-decoration: line-through;
+        text-decoration-thickness: 1px;
+        text-align: right;
+    }
+}
