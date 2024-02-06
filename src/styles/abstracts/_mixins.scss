@@ -1,8 +1,9 @@
-@mixin centerredContentVH($cross: center, $main: center, $direction: row) {
+@mixin centerredContentVH($cross: center, $main: center, $direction: row, $gap: 0px) {
     display: flex;
     flex-direction: $direction;
     justify-content: $main;
     align-items: $cross;
+    gap: $gap;
 }
 
 @mixin slightBoxShadow {
