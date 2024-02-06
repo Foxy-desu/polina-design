@@ -1,0 +1,30 @@
+.page-layout {
+    display: grid;
+    grid-template-columns: 20% 1fr 20%;
+    grid-template-rows: 1fr 1fr 60px; //temp
+    grid-template-areas: "al h ar" "al c ar" "f f f";
+    width: 100%;
+    height: 100%;
+    margin: 29px 0 95px 0;
+}
+
+.aside-left {
+    grid-area: al;
+}
+
+.hero {
+    grid-area: h;
+}
+
+.main {
+    grid-area: c;
+}
+
+.aside-right {
+    grid-area: ar;
+}
+
+.footer {
+    grid-area: f;
+}
+
