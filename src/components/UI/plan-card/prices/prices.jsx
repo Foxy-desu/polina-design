@@ -2,7 +2,6 @@ import React from "react";
 import styles from "./prices.module.scss";
 
 const Prices = (props) => {
-
     const {price, prevPrice} = props;
 
     return <div className={styles["prices"]}>
