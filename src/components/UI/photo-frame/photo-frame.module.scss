@@ -1,0 +1,58 @@
+@import "../../../styles/abstracts/mixins";
+@import "../../../styles/abstracts/variables";
+
+.photo-frame {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: left/cover no-repeat url(../../../assets/images/phone-frame-light.svg);
+
+    &_plain {
+        @extend .photo-frame;
+        background: url(../../../assets/images/plain-phone-container-1.svg);
+        
+        &_lg {
+            @extend .photo-frame_plain;
+            width: 250.5px;
+            height: 433px;
+        }
+
+        &_sm {
+            @extend .photo-frame_plain;
+            width: 227px;
+            height: 393px;
+        }
+    }
+
+    &_designed {
+        @extend .photo-frame;
+        background: url(../../../assets/images/designed-phone-container-1.svg);
+        
+        &_lg {
+            @extend .photo-frame_designed;
+            width: 292px;
+            height: 504px;
+        }
+
+        &_sm {
+            @extend .photo-frame_designed;
+            width: 280px;
+            height: 484px;
+        }
+    }
+
+    &__wrap {
+        position: absolute;
+        width: 88%;
+        height: 70%;
+        top: 46%;
+        left: 49.5%;
+        transform: translate(-50%, -50%);
+    }
+
+    &__image {
+        width: 100%;
+        height: 100%;
+
+    }
+}
