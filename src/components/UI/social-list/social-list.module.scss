@@ -1,0 +1,7 @@
+@import '../../../styles/abstracts/mixins';
+@import '../../../styles/abstracts/variables';
+
+.social-list {
+    @include centerredContentVH(flex-start, center, column, 12px);
+    width: fit-content;
+}
