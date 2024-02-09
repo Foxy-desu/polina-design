@@ -12,3 +12,7 @@
 body {
     background-color: rgb(66, 1, 206);
 }
+
+ul {
+    list-style: none;
+}
