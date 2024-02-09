@@ -4,7 +4,7 @@ import { PageLayout } from "./components/page-layout/page-layout";
 function App() {
   return (
     <>
-      <PageLayout/>
+      <PageLayout data={state}/>
     </>
   );
 }
