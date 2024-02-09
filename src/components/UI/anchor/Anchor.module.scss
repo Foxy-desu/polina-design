@@ -45,8 +45,15 @@ $block-height: 43px;
                     text-shadow: none;
                 }
             }
+            
+            &:focus-visible {
+                outline: none;
+                color: $clr-base-dk;
+            }
 
         }
+
+       
     }
 
 }
