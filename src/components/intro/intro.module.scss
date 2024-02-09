@@ -1,0 +1,37 @@
+@import "../../styles/abstracts/mixins";
+@import "../../styles/abstracts/variables";
+
+.intro {
+    @include centerredContentVH($cross: center, $main: flex-start, $direction: column, $gap: 0px);
+    width: 920px;
+    height: 640px; //temp
+    position: relative;
+    padding: 23px 42px 0;
+
+    &__header {
+        color: $clr-secondary-ltr;
+        font-size: $fs-lgst;
+        font-weight: $fw-thkst;
+        line-height: 100.9%;
+        text-transform: uppercase;
+        padding-bottom: 17px;
+    }
+   
+}
+
+.cards {
+    @include centerredContentVH($cross: center, $main: center, $direction: row, $gap: 114px);
+
+
+    &__plain-card {
+        width: 230px;
+        height: 394px;
+        transform: rotate(-8.50deg);
+    }
+
+    &__designed-card {
+        width: 292px;
+        height: 504px;
+        transform: rotate(9.46deg);
+    }
+}
