@@ -21,7 +21,15 @@ const state = {
         {id: 14, info: 'Вешалка-трансформер', path: 'images/portfolioImages/14.png'},
         {id: 15, info: '3D EVA коврики', path: 'images/portfolioImages/15.png'},
         {id: 16, info: 'Ретон-форте', path: 'images/portfolioImages/16.png'},
-    ]
+    ],
+    introCards: {
+        plain: {
+            id: 17, info: "Карточка до обработки", path: "images/plain-card-1.png"
+        },
+        designed: {
+            id: 18, info: "Карточка после обработки", path: "images/designed-card-1.png"
+        }
+    }
 
 };
 
