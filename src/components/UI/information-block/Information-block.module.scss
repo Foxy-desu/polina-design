@@ -7,6 +7,7 @@
         box-sizing: content-box;
         width: fit-content;
         color: $clr-base-dk;
+        font-size: $fs-med-plus;
         font-weight: $fw-thkr;
         background-color: $clr-secondary;
         padding: 0 9px;
@@ -16,6 +17,11 @@
     &__desc {
         padding-left: 9px;
         line-height: 133%;
+
+        &_lg {
+            @extend .information-block__desc;
+            font-size: $fs-med-plus;
+        }
     } 
     
 }
