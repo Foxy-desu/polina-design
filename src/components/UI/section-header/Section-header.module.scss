@@ -2,16 +2,15 @@
 @import '../../../styles/abstracts/variables';
 
 .section-header {
-
-
     @include centerredContentVH(center, flex-start);
+
     position: relative;
     height: 90px;
     overflow: hidden;
 
     &__text {
         
-        color: $clr-secondary-lt;
+        color: $clr-secondary-ltr;
         font-weight: $fw-thkst;
         font-size: $fs-lgst;
         text-transform: uppercase;
