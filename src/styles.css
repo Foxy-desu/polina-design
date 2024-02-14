@@ -11,6 +11,7 @@
 
 body {
     background-color: rgb(66, 1, 206);
+    overflow-x: hidden;
 }
 
 ul {
