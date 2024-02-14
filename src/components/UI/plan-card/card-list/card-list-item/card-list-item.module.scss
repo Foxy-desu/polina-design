@@ -4,6 +4,7 @@
 .card-list__item {
     font-size: $fs-tny;
     line-height: 100%;
+    list-style: disc;
     
     &::marker {
         font-size: $fs-tnst;
