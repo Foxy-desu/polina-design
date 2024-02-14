@@ -4,6 +4,7 @@
 .prices {
     @include centerredContentVH($cross: center, $main: center, $direction: column, $gap: 0px);
     position: relative;
+    margin-bottom: 69px;
 
 }
 
