@@ -14,16 +14,39 @@
         font-weight: $fw-thkst;
         line-height: 100.9%;
         text-transform: uppercase;
-        padding-bottom: 17px;
+        padding-bottom: 34px;
+    }
+
+    &__info-wrap {
+        display: flex;
+        align-items: flex-end;
+        position: absolute;
+        left: 46px;
+        bottom: -20px;
+
+    }
+
+    &__arrow {
+        display: block;
+        position: relative;
+        max-width: 243px;
+        min-width: 210px;
+        top: 37px;
+        width: 17.5cqw;
+        height: 20cqh;
+        background: url(../../assets/images/curved-arrow.svg) center no-repeat;
+        background-size: contain;
     }
    
 }
 
 .cards {
-    @include centerredContentVH($cross: center, $main: center, $direction: row, $gap: 114px);
+    @include centerredContentVH($cross: center, $main: center, $direction: row, $gap: 6vw);
+    position: relative;
 
 
     &__plain-card {
+        margin-top: -45px;
         width: 230px;
         height: 394px;
         transform: rotate(-8.50deg);
@@ -34,4 +57,20 @@
         height: 504px;
         transform: rotate(9.46deg);
     }
+
+    &__transform-arrow {
+        position: absolute;
+        z-index: 5;
+        top: 26%;
+        left: 46.5%;
+        transform: translate(-50%, -50%);
+        width: 23%;
+        height: 23%;
+        background: url(../../assets/icons/transform-arrow.svg) no-repeat center;
+        background-size: contain;
+    }
+}
+
+.card-wrap {
+    position: relative;
 }
