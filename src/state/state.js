@@ -29,6 +29,67 @@ const state = {
         designed: {
             id: 18, info: "Карточка после обработки", path: "images/designed-card-1.png"
         }
+    },
+    advantagesSection: {
+        //информация, прописанная в блоке с преимуществами
+        //для кастомного переноса строки в description следует использовать \n - символ переноса строки
+        sectionHeading: {content:"мы лучше", type: "1"},
+        advantages: [
+            {id: "adv1", heading: "портфолио", description: "с работами в разных стилях, ведь мы ориентируемся на ваших клиентов", descType: "small"},
+            {id: "adv2", heading: "современный", description: "концепт не оставитникого равнодушным", descType: "small"},
+            {id: "adv3", heading: "никаких проблем", description: "с лицензиями на\n материалы", descType: "small"},
+            {id: "adv4", heading: "гарантия", description: "возврата средств, если не сможем завершить заказ", descType: "small"},
+            
+        ]
+    },
+    pricesSection: {
+        sectionHeading: {content:"стоимость", type: "2"},
+        plans: [
+            {
+                id: "plan1",
+                planName: "start",
+                perks: [
+                    "1 слайд (обложка)",
+                    "составление текста инфографики",
+                    "дизайн под вашу аудиторию",
+                    "сроки: 1-2 рабочих дня"
+                ],
+                price: '599',
+                prevPrice: "",
+                discount: "",
+                type: "dark"
+            },
+            {
+                id: "plan2",
+                planName: "pro",
+                perks: [
+                    "обложка",
+                    "4 информационных слайда",
+                    "дизайн под вашу аудиторию",
+                    "сроки: 2-3 рабочих дня"
+                ],
+                price: '2499',
+                prevPrice: "3000",
+                discount: "20",
+                type: "light"
+            },
+            {
+                id: "plan3",
+                planName: "premium",
+                perks: [
+                    "обложка",
+                    "6 информационных слайдов",
+                    "логотип",
+                    "шапка магазина",
+                    "дизайн под вашу аудиторию",
+                    "сроки: 5 рабочих дней"
+                ],
+                price: '6990',
+                prevPrice: "9200",
+                discount: "30",
+                type: "dark, glowing"
+            },
+        ]
     }
 
 };
