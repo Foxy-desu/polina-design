@@ -2,7 +2,7 @@
 @import '../../../styles/abstracts/variables';
 
 .plan-card {
-    @include centerredContentVH(center, flex-start, column);
+    @include centerredContentVH(center, space-between, column);
     width: 255px;
     height: 500px;
     padding: 27px 25px 44px;
@@ -11,7 +11,6 @@
 
     &_dark {
         background: $clr-rad-grad-violet;
-
     }
 
     &_light {
@@ -21,20 +20,9 @@
     &_glowing {
         box-shadow: 0px 0px 100px 0px rgb(133, 255, 90);
     }
+}
 
-    &__card-header {
-        margin-bottom: auto;
-    };
+.plan-card__card-content {
+    @include centerredContentVH($cross: center, $main: space-between, $direction: column, $gap: 89px);
 
-    &__card-list {
-        margin: auto 0 85px 0;
-    }
-
-    &__card-prices {
-        align-self: flex-end;
-    }
-
-    &__card-btn {
-        margin: auto 0 0 0;
-    }
 }

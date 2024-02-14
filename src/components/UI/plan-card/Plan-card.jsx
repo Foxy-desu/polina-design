@@ -5,11 +5,7 @@ import { CardList } from "./card-list/card-list.jsx";
 import { Prices } from "./prices/prices.jsx";
 import styles from './plan-card.module.scss';
 
-//TODO: implement styles
-
-const PlanCard = (props)=> {
-    const {plan, perks, price, prevPrice, discount} = props.data;
-    const type = props.type;
+const PlanCard = ({planName, perks, price, prevPrice, discount, type})=> {
 
     return (
     <article className={
@@ -22,13 +18,15 @@ const PlanCard = (props)=> {
          : false}`
         }>
         <div className={styles["plan-card__card-header"]}>
-            <CardHeader content={plan} discount={discount}/>
+            <CardHeader content={planName} discount={discount}/>
         </div>
-        <div className={styles["plan-card__card-list"]}>
-            <CardList content={perks}/>
-        </div>
-        <div className={styles["plan-card__card-prices"]}>
-            <Prices price={price} prevPrice={prevPrice}/>
+        <div className={styles["plan-card__card-content"]}>
+            <div className={styles["plan-card__card-list"]}>
+                <CardList content={perks} />
+            </div>
+            <div className={styles["plan-card__card-prices"]}>
+                <Prices price={price} prevPrice={prevPrice}/>
+            </div>
         </div>
         <div className={styles["plan-card__card-btn"]}>
             <Button content='заказать' type='lg'/>
