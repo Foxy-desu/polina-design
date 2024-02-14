@@ -21,7 +21,7 @@ const PhotoFrame = ({path, info, type}) => {
     return (
         <div className={`${styles["photo-frame"]}${' ' + setStyle(type)}`}>
            {loading ? (
-            <div>{'loading'}</div>
+            <div>{'загрузка'}</div>
             ) : (
                 <div className={styles["photo-frame__wrap"]}>
                     <img className={styles["photo-frame__image"]} width={167} height={223} src={image} alt={info}/>
