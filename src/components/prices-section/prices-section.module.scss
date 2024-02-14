@@ -1,0 +1,43 @@
+@import "../../styles/abstracts/mixins";
+@import "../../styles/abstracts/variables";
+
+.prices {
+    @include centerredContentVH($cross: center, $main: center, $direction: column, $gap: 0px);
+    position: relative;
+
+}
+
+.gradient {
+    z-index: -1;
+    position: absolute;
+    height: 100%;
+    width: 100vw;
+    background: linear-gradient(180.00deg, rgb(105, 34, 255),rgb(66, 0, 205) 100%);
+}
+
+.content-wrap {
+    @include centerredContentVH($cross: center, $main: flex-start, $direction: column, $gap: 0px);
+    width: 920px;
+    padding: 0 42px;
+    max-width: 954px;
+    background: url(../../assets/images/pricing-line-bg.svg) no-repeat center bottom 23px;
+    background-size: contain;
+}
+
+.prices__header {
+    margin-bottom: 29px;
+    align-self: flex-start;
+}
+
+.prices__list {
+    @include centerredContentVH($cross: flex-start, $main: center, $direction: row, $gap: 30px);
+    margin-bottom: 56px;
+    
+}
+
+.prices__list-item {
+
+    &:nth-child(2n+1) {
+        margin-top: 40px;
+    }
+}
