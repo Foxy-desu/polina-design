@@ -24,15 +24,15 @@
 
     &.nav-wrap {
         position: fixed;
-        left: 3vw;
         top: 29px;
+        left: calc(50% - (920px / 1.5) - 3vw);
     }
 
     &.socials-wrap {
         position: fixed;
-        right: 10vw;
         top: 50dvh;
         transform: translateY(-50%);
+        right: calc(50% - (920px / 1.8) - 3vw);
     }
 }
 
