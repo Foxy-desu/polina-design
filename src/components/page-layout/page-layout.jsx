@@ -7,6 +7,7 @@ import { AdvantagesSec } from "../advantages-section/advantages-section.jsx";
 import styles from "./page-layout.module.scss";
 import { PricesSection } from "../prices-section/prices-section.jsx";
 import { PortfolioSection } from "../portfolio-section/portfolio-section.jsx";
+import { AtmosphereSection } from "../atmosphere-section/atmosphere-section.jsx";
 
 
 const PageLayout = ({data}) => {
@@ -15,6 +16,7 @@ const PageLayout = ({data}) => {
     const advantages = data.advantagesSection
     const prices = data.pricesSection;
     const portfolio = data.portfolioSection;
+    const atmosphere = data.atmosphereSection;
     const infoCardText = {
         heading: "кликабельная",
         description: "обложка это 60% успеха!"
@@ -42,22 +44,7 @@ const PageLayout = ({data}) => {
                     <AdvantagesSec advantagesData={advantages}/>
                     <PricesSection pricesData={prices} />
                     <PortfolioSection portfolioData={portfolio}/>
-                    <section className="atmosphere" id="atmosphere">
-                        <div className={styles["content-wrap"]}>
-                            <h2>not just an image</h2>
-                            <div>
-                                infoblock
-                                images
-                                logo-decoration
-                            </div>
-                            <div>
-                                images
-                                infoblock
-                                images
-                                phones
-                            </div>
-                        </div>
-                    </section>
+                    <AtmosphereSection atmosphereData={atmosphere}/>
                 </main>
                 <footer>
                 contacts
