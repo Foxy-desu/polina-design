@@ -97,6 +97,40 @@ const state = {
             {id: "portBtn1", content: "полный список цен", type: "", action: ""},
             {id: "portBtn2", content: "сделать заказ", type: "colored", action: ""}
         ],
+    },
+    atmosphereSection: {
+        sectionHeading: {content:"не просто картинка", type: "2"},
+        vibeBlock: {
+            description: {id: "vibeDesc1", heading: "атмосфера", description: "первое, что мы стараемся сделать - это передать настроение товара через дизайн карточки", descType: "small"},
+            cards: [
+                {id: "vibeCard1", info: 'Глюкозамин-хондроитин', path: 'images/portfolioImages/12.png'},
+                {id: "vibeCard2", info: 'Глюкозамин-хондроитин', path: 'images/portfolioImages/12.png'},
+                {id: "vibeCard3", info: 'Глюкозамин-хондроитин: состав', path: 'images/atmosphere-sample-lg-2.png'}
+            ]
+
+        },
+        outstandBlock: {
+            cards: {
+                upperBlock: [
+                    {id: "outCard1", info: 'пример обычной, неприметной карточки', path: 'images/atmosphere-plain-sm-1.png'},
+                    {id: "outCard2", info: 'пример обычной, неприметной карточки', path: 'images/atmosphere-plain-sm-2.png'},
+                    {id: "outCard3", info: 'пример обычной, неприметной карточки', path: 'images/atmosphere-plain-sm-3.png'},
+                    {id: "outCard4", info: 'пример обычной, неприметной карточки', path: 'images/atmosphere-plain-sm-4.png'},
+                ],
+                lowerBlock: [
+                    {id: "outCard5", info: 'пример обычной, неприметной карточки', path: 'images/atmosphere-plain-sm-5.png'},
+                    {id: "outCard6", info: 'пример обычной, неприметной карточки', path: 'images/atmosphere-plain-sm-6.png'},
+                    {id: "outCard7", info: 'пример обычной, неприметной карточки', path: 'images/atmosphere-plain-sm-7.png'},
+                    {id: "outCard8", info: 'пример обычной, неприметной карточки', path: 'images/atmosphere-plain-sm-8.png'},
+                    {id: "outCard9", info: 'пример обычной, неприметной карточки', path: 'images/atmosphere-plain-sm-9.png'},
+                ]
+            },
+            description: {id: "vibeDesc1", heading: "выделяющийся", description: "контент очень важен, ведь если ваша карточка будет сливаться с другими = ее просто не заметят", descType: "small"}
+        },
+        lgExampleBlock: [
+            {id: "lgEx1", info: "Аппарат для маникюра и педикюра: необработанная карточка", path: 'images/atmosphere-plain-lg-1.png', type: "plain"},
+            {id: "lgEx2", info: "Аппарат для маникюра и педикюра: обработанная карточка", path: 'images/atmosphere-designed-lg-1.png', type: "designed"},
+        ]
     }
 
 };
