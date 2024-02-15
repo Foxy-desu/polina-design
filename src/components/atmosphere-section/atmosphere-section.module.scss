@@ -1,0 +1,97 @@
+@import "../../styles/abstracts/mixins";
+@import "../../styles/abstracts/variables";
+
+.atmosphere {
+    @include centerredContentVH($cross: center, $main: center, $direction: column, $gap: 0px);
+    position: relative;
+    margin-bottom: 76px;
+}
+
+.content-wrap {
+    @include centerredContentVH($cross: flex-start, $main: flex-start, $direction: column, $gap: 0px);
+    width: 920px;
+    padding: 0 0 0 42px;
+}
+
+.atmosphere__header {
+    width: 100%;
+    margin-bottom: 45px;
+}
+
+.atmosphere__vibe-block {
+    @include centerredContentVH($cross: center, $main: flex-start, $direction: column, $gap: 0px);
+    width: 100%;
+    margin-bottom: 47px;
+    background: url(../../assets/images/vibe-block-decoration.png) no-repeat center right;
+    background-size: 39%;
+
+    .card-wrap {
+        width: 150px;
+        height: 200px;
+        border: 5px solid $clr-ltr;
+    }    
+}
+
+.vibe-block__desc-wrap {
+    align-self: flex-start;
+    max-width: 346px;
+    margin-bottom: 40px;
+}
+
+.vibe-block__cards {
+    @include centerredContentVH($cross: flex-start, $main: flex-start, $direction: row, $gap: 0px);
+    width: 100%;
+    gap: 30px;
+}
+
+.card-wrap {
+    width: 75px;
+    height: 100px;
+}
+
+.atmosphere__outstand-block {
+    @include centerredContentVH($cross: flex-start, $main: flex-start, $direction: row, $gap: 0px);
+    width: 100%;
+    background: url(../../assets/images/pricing-line-bg.svg) no-repeat;
+    background-size: cover;
+    padding-top: 80px;
+}
+
+.outstand-block__plain-cards {
+    
+}
+
+.plain-cards__images {
+    @include centerredContentVH($cross: flex-start, $main: flex-start, $direction: row, $gap: 20px);
+
+    &.upper-images {
+        margin-bottom: 26px;
+    }
+
+}
+
+.outstand-block__large-examples {
+    display: flex;
+    transform: translate(-84px, -80px);
+}
+
+.plain-cards__desc-wrap {
+    max-width: 346px;
+    margin-bottom: 29px;
+}
+
+.large-examples__card-wrap {
+    width: 253px;
+    height: 433px;
+
+    &.designed-card-wrap {
+        width: 283px;
+        height: 484px;
+        transform: rotate(6.5deg);
+        margin-left: -44px;
+    }
+
+    &.plain-card-wrap {
+        transform: rotate(-17deg);
+    }
+}
