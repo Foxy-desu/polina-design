@@ -7,6 +7,7 @@ import { Button } from "../UI/button/button";
 export const PricesSection = ({pricesData}) => {
     const header = pricesData.sectionHeading;
     const plans = pricesData.plans;
+    const btn = pricesData.buttons[0];
 
     function renderPlans(plans) {
         return (
@@ -31,7 +32,7 @@ export const PricesSection = ({pricesData}) => {
                     {renderPlans(plans)}
                 </ul>
                 <div className={styles["prices__btn"]}>
-                    <Button content={"полный список цен"}/>
+                    <Button content={btn.content}/>
                 </div>
             </div>
         </section>
