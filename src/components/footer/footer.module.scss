@@ -1,0 +1,23 @@
+@import "../../styles/abstracts/mixins";
+@import "../../styles/abstracts/variables";
+
+.footer {
+    display: block;
+}
+
+.content-wrap {
+    @include centerredContentVH($cross: flex-start, $main: center, $direction: row, $gap: 0px);
+
+}
+
+.footer__list {
+    @include centerredContentVH($cross: flex-start, $main: flex-start, $direction: column, $gap: 24px);
+    width: 920px;
+    padding: 42px;
+}
+
+.footer__link-tel {
+
+    font-size: $fs-sml;
+    font-weight: $fw-thkr;
+}
