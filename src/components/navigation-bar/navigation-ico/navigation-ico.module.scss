@@ -1,0 +1,17 @@
+@import "../../../styles/abstracts/mixins";
+@import "../../../styles/abstracts/variables";
+
+.nav-bar__logo {
+    display: block;
+
+    &:focus-visible {
+        outline: $clr-secondary auto 1px;
+    }
+}
+
+.nav-bar__list {
+
+    &-item:first-child {
+        margin-bottom: calc(61px - 17px);
+    }
+}
