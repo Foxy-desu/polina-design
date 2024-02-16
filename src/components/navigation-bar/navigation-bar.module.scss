@@ -6,14 +6,6 @@
     @include centerredContentVH($cross: center, $main: flex-start, $direction: column, $gap: 61px);
 }
 
-.nav-bar__logo {
-    display: block;
-
-    &:focus-visible {
-        outline: $clr-secondary auto 1px;
-    }
-}
-
 .nav-bar__list {
     @include centerredContentVH($cross: center, $main: flex-start, $direction: column, $gap: 17px);
 
