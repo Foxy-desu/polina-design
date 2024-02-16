@@ -28,12 +28,15 @@
 
     &__arrow {
         display: block;
-        position: relative;
-        max-width: 243px;
+        position: absolute;
+        top: 408px;
+        right: 110px;
+        z-index: 25;
+        transform: rotate(-4deg);
+        max-width: 263px;
         min-width: 210px;
-        top: 37px;
-        width: 17.5cqw;
-        height: 20cqh;
+        width: 20cqw;
+        height: 216px;
         background: url(../../assets/images/curved-arrow.svg) center no-repeat;
         background-size: contain;
     }
