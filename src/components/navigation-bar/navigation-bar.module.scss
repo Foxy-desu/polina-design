@@ -4,10 +4,21 @@
 
 .nav-bar {
     @include centerredContentVH($cross: center, $main: flex-start, $direction: column, $gap: 61px);
+
+    @media screen and (max-width: $sw-max) {
+        padding: 16px 64px 16px 16px;
+    }
 }
 
 .nav-bar__list {
     @include centerredContentVH($cross: center, $main: flex-start, $direction: column, $gap: 17px);
+
+    @media screen and (max-width: $sw-max) {
+        gap: 0;
+        flex-direction: row;
+        justify-content: center;
+        width: 100%;
+    }
 
     &-item:first-child {
         margin-bottom: calc(61px - 17px);
