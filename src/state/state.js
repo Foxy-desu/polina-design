@@ -98,7 +98,7 @@ const state = {
             {
                 id: "adv2",
                 heading: "современный",
-                description: "концепт не оставитникого равнодушным",
+                description: "концепт не оставит\nникого равнодушным",
                 descType: "small"
             },
             {
@@ -110,7 +110,7 @@ const state = {
             {
                 id: "adv4",
                 heading: "гарантия",
-                description: "возврата средств, если не сможем завершить заказ",
+                description: "возврата средств, если\nне сможем завершить заказ",
                 descType: "small"
             },
         ]
