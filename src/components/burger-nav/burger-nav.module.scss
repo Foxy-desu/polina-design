@@ -1,0 +1,24 @@
+@import "../../styles/abstracts/mixins";
+@import "../../styles/abstracts/variables";
+
+.navigation {
+  padding: 2% 2% 0;
+}
+.navigation__menu {
+  display: none;
+
+  &_active {
+    display: block;
+    height: 100vh;
+  }
+}
+.navigation__btn {
+  width: 30px;
+  height: 30px;
+}
+
+.navigation__socials {
+  position: absolute;
+  left: 2%;
+  top: 40dvh;
+}
