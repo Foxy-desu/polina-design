@@ -4,9 +4,14 @@
 .image {
     @include centerredContentVH($cross: center, $main: center, $direction: column, $gap: 0px);
     position: relative;
-    width: 794px;
-    height: 218px;
+    width: 100%;
+    max-width: 794px;
+    max-height: 218px;
+    height: fit-content;
+    padding-bottom: 3%;
+    background-size: 100%;
     background: url(../../assets/images/hero-bg.svg);
+    background-size: 100%;
 
     &__main-text {
         width: 98%;
@@ -14,15 +19,16 @@
     }
 
     &__block-wrap {
+        width: 28%;
         position: absolute;
-        bottom: 30.6px;
+        bottom: 20%;
         margin-left: 9px;
     }
 
     &__add-block {
         position: relative;
         box-sizing: border-box;
-        padding: 7px 43px;
+        padding: 3% 13%;
         background-color: $clr-secondary;
         border: 2px solid $clr-secondary;
         border-radius: 23px;
@@ -38,7 +44,7 @@
             @include centerredContentVH($cross: center, $main: center, $direction: row, $gap: 0px);
 
             position: absolute;
-            top: -7px;
+            top: -6px;
             left: -2px;
             content: "DИZАЙN";
             width: 100%;
