@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import styles from "./atmosphere-section.module.scss";
 import { SectionHeader } from "../UI/section-header/section-header";
 import { InformationBlock } from "../UI/information-block/information-block";
@@ -14,6 +14,20 @@ export const AtmosphereSection = ({atmosphereData}) => {
     const outstandUpperCards = atmosphereData.outstandBlock.cards.upperBlock;
     const outstandLowerCards = atmosphereData.outstandBlock.cards.lowerBlock;
     const largeImages = atmosphereData.lgExampleBlock;
+
+    const [block, setBlock] = useState(()=> {
+        return window.innerWidth > 840? "detailed" : "compact";
+    })
+
+    window.addEventListener("resize", ()=> {
+        if (window.innerWidth > 840) {
+            setBlock("detailed")
+        } else setBlock("compact");
+    })
+
+    useEffect(()=> {
+        console.log(block);
+    }, [block]);
 
     function renderCards(cards) {
         return cards.map((card) => {
@@ -55,14 +69,27 @@ export const AtmosphereSection = ({atmosphereData}) => {
                             {renderCards(outstandLowerCards)}
                         </div>
                     </div>
-                    <div className={styles["outstand-block__large-examples"]}>
-                        <div className={`${styles["large-examples__card-wrap"]} ${styles["plain-card-wrap"]}`}>
-                            <PhotoFrame path={largeImages[0].path} info={largeImages[0].info} type={largeImages[0].type}/>
+                    {block === "detailed"
+                     ? (
+                            <div className={styles["outstand-block__large-examples"]}>
+                                <div className={`${styles["large-examples__card-wrap"]} ${styles["plain-card-wrap"]}`}>
+                                    <PhotoFrame path={largeImages[0].path} info={largeImages[0].info}
+                                                type={largeImages[0].type}/>
+                                </div>
+                                <div
+                                    className={`${styles["large-examples__card-wrap"]} ${styles["designed-card-wrap"]}`}>
+                                    <PhotoFrame path={largeImages[1].path} info={largeImages[1].info}
+                                                type={largeImages[1].type}/>
+                                </div>
+                            </div>
+                        )
+                    : (
+                        <div className={`${styles["outstand-block__compact"]}`}>
+                            {renderCards(largeImages)}
                         </div>
-                        <div className={`${styles["large-examples__card-wrap"]} ${styles["designed-card-wrap"]}`}>
-                            <PhotoFrame path={largeImages[1].path} info={largeImages[1].info} type={largeImages[1].type}/>
-                        </div>
-                    </div>
+                      )
+                    }
+
                 </div>
             </div>
         </section>

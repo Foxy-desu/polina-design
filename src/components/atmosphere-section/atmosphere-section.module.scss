@@ -71,13 +71,14 @@
     @include centerredContentVH($cross: flex-start, $main: flex-start, $direction: row, $gap: 0px);
     max-width: 920px;
     width: 100%;
-    background: url(../../assets/images/pricing-line-bg.svg) no-repeat;
-    background-size: contain;
+    background: url(../../assets/images/pricing-line-bg.svg) no-repeat center;
+    background-size: cover;
+    background-position-y: -3%;
     padding-top: 6%;
 
-    @media  screen and (max-width: 520px) {
+    @media  screen and (max-width:  840px) {
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start;
     }
 }
 
@@ -92,7 +93,7 @@
         margin-bottom: 26px;
     }
 
-    @media  screen and (max-width: 520px) {
+    @media  screen and (max-width:  840px) {
         display: none;
     }
 }
@@ -100,10 +101,60 @@
 .outstand-block__large-examples {
     display: flex;
     transform: translate(-84px, -80px);
+    transition: 0.2s ease;
 
-    @media  screen and (max-width: 520px) {
-        transform: translate(0px, 0px);
+
+    @media  screen and (max-width: 1184px) {
+        transform: translate(-9cqw, -8%);
     }
+    @media  screen and (max-width:  840px) {
+        transform: translate(-2cqw, 8%);
+    }
+}
+
+.outstand-block__compact {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 2cqw;
+    flex-wrap: wrap;
+    padding-right: 11px;
+
+    @media screen and (max-width: 326px) {
+
+        justify-content: center;
+
+    }
+
+    .card-wrap {
+        display: block;
+        width: 150px;
+        height: 200px;
+        border: 5px solid rgb(255, 255, 255);
+        box-shadow: 0px 4px 74px 0px rgb(65, 0, 203);
+
+        @media screen and (max-width: 326px) {
+            position: absolute;
+
+            &:hover {
+                z-index: 2;
+            }
+
+            &:first-child {
+                left: 0;
+                z-index: 0;
+            }
+
+            &:last-child {
+                right: 10px;
+                z-index: 1;
+            }
+        }
+    }
+
+
+
 }
 
 .plain-cards__desc-wrap {
@@ -112,17 +163,21 @@
 }
 
 .large-examples__card-wrap {
-    $plain-card-w: 25cqw;
-    $designed-card-w: 30cqw;
+    $plain-card-w: 17cqw;
+    $designed-card-w: 20cqw;
 
     @include cardSizeCQW($plain-card-w, 0.5793);
     max-width: 253px;
     max-height: 433px;
+    min-width: 202px;
+    min-height:349px;
 
     &.designed-card-wrap {
         @include cardSizeCQW($designed-card-w, 0.5793);
         max-width: 283px;
         max-height: 484px;
+        min-width: 238px;
+        min-height: 411px;
         transform: rotate(6.5deg);
         margin-left: -44px;
     }
@@ -131,7 +186,14 @@
         transform: rotate(-17deg);
     }
 
-    @media  screen and (max-width: 520px) {
+    @media  screen and (max-width: 1184px) {
+        @include cardSizeCQW($plain-card-w, 0.5793);
+        &.designed-card-wrap {
+            @include cardSizeCQW($designed-card-w, 0.5793);
+        }
+    }
+
+    @media  screen and (max-width: 840px) {
         transform: translate(0px, 0px);
     }
 }
