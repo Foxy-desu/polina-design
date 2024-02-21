@@ -1,6 +1,11 @@
 @import "../../styles/abstracts/mixins";
 @import "../../styles/abstracts/variables";
 
+//for body on burger revealed
+.scroll-disabled {
+    overflow: hidden;
+}
+
 .header {
     width: 100%;
     margin-bottom: 13%;
@@ -8,7 +13,7 @@
 
 .page-layout {
     // @include centeredContentVH($cross: flex-start, $main: center, $direction: row, $gap: 0px);
-    gap: 15px;
+    //gap: 15px;
     width: 100%;
     height: 100%;
     margin: 29px 0 95px 0;
@@ -48,11 +53,42 @@
 
         @media screen and (max-width: $sw-max) {
             order: 2;
-            position: sticky;
+            position: fixed;
             top: 0;
-            left: auto;
-            background: #2e23c39c;
-            backdrop-filter: blur(4px);
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: $clr-base-dk-transp;
+            backdrop-filter: blur(11px);
+            width: 100%;
+        }
+
+        &_open {
+            position: fixed;
+            top: 29px;
+            left: calc(50% - (920px / 1.5) - 2vw);
+
+            @media screen and (max-width: $sw-max) {
+                position: sticky;
+                bottom: auto;
+                top: 0;
+                bottom: auto;
+                left: 0;
+                right: 0;
+                background: $clr-base-dk-transp;
+                backdrop-filter: blur(11px);
+                width: 100%;
+            }
+        }
+
+        &_close {
+            position: fixed;
+            bottom: auto;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: $clr-base-dk-transp;
+            backdrop-filter: blur(11px);
             width: 100%;
         }
     }
@@ -64,11 +100,12 @@
         right: calc(50% - (920px / 1.8) - 2vw);
 
         @media screen and (max-width: $sw-breakPoint-2) {
-            order: 1;
             position: fixed;
-            top: 16px;
-            right: 16px;
-            transform: none;
+            order: 1;
+            top: auto;
+            bottom: 6dvh;
+            right: 50%;
+            transform: translateX(50%);
         }
     }
 }
