@@ -9,9 +9,22 @@
     }
 }
 
+.nav-bar__logo-img {
+    @media screen and (max-width: $sw-max) {
+        width: 98px;
+    }
+}
+
 .nav-bar__list {
 
     &-item:first-child {
+
         margin-bottom: calc(61px - 17px);
+
+        @media screen and (max-width: $sw-max) {
+            margin-bottom: 0px;
+            margin-right: 19px;
+            
+        }
     }
 }
