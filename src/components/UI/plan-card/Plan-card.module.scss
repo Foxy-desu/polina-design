@@ -2,12 +2,17 @@
 @import '../../../styles/abstracts/variables';
 
 .plan-card {
-    @include centerredContentVH(center, space-between, column);
+    @include centerredContentVH(center, flex-start, column);
+    position: relative;
     width: 255px;
     height: 500px;
     padding: 27px 25px 44px;
     border: 1px solid rgb(133, 255, 90);
     border-radius: 8.71px;
+
+    &:hover {
+        cursor: default;
+    }
 
     &_dark {
         background: $clr-rad-grad-violet;
@@ -20,9 +25,34 @@
     &_glowing {
         box-shadow: 0px 0px 100px 0px rgb(133, 255, 90);
     }
+
+    &:nth-child(1) {
+        z-index: 1;
+    }
+
+    &:nth-child(2) {
+        z-index: 2;
+    }
+
+    &:nth-child(3) {
+        z-index: 3;
+    }
+}
+
+.plan-card__card-header {
+    margin-bottom: 16%;
+
 }
 
 .plan-card__card-content {
-    @include centerredContentVH($cross: center, $main: space-between, $direction: column, $gap: 89px);
+    @include centerredContentVH($cross: center, $main: space-between, $direction: column, $gap: 0px);
+    flex-grow: 1;
+    margin-bottom: 8%;
 
+}
+
+.plan-card__card-btn {
+    margin: auto auto 0;
+    width: 82.5%;
+    height: 13.4%;
 }
