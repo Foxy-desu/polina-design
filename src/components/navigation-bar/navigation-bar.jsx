@@ -5,7 +5,7 @@ import styles from "./navigation-bar.module.scss";
 import { NavigationIco } from "./navigation-ico/navigation-ico";
 
 
-const AnchorGroup = ({anchors}) => {
+const AnchorGroup = ({anchors, clickHandler}) => {
     const [clickedId, setClickedId] = useState(-1);
 
     return (
@@ -19,12 +19,12 @@ const AnchorGroup = ({anchors}) => {
 
             if (type === "image") {
                 return (
-                    <NavigationIco key={id} content={anchorContent} sectionId={sectionId} icoPath={icoPath} id={i} setClickedId={setClickedId}/>
+                    <NavigationIco key={id} content={anchorContent} sectionId={sectionId} icoPath={icoPath} id={i} setClickedId={setClickedId} clickHandler={clickHandler}/>
                 )
             }
             return (
                 <li className={styles["nav-bar__list-item"]} key={id}>
-                    <Anchor id={i} clickedId={clickedId} sectionId={sectionId} content={anchorContent} setClickedId={setClickedId}/>
+                    <Anchor id={i} clickedId={clickedId} sectionId={sectionId} content={anchorContent} setClickedId={setClickedId} clickHandler={clickHandler}/>
                 </li>
             )
         })}
@@ -32,11 +32,11 @@ const AnchorGroup = ({anchors}) => {
     )
 }
 
-export const NavigationBar = ({anchorsData}) => {
+export const NavigationBar = ({anchorsData, clickHandler}) => {
 
     return <nav className={styles["nav-bar"]}>
         <ul className={styles["nav-bar__list"]}>
-            <AnchorGroup anchors={anchorsData}/>
+            <AnchorGroup anchors={anchorsData} clickHandler={clickHandler}/>
         </ul>
     </nav>
 };
