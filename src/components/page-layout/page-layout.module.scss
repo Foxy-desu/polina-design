@@ -2,19 +2,38 @@
 @import "../../styles/abstracts/variables";
 
 .header {
-    margin-bottom: calc(50px + 114px);
+    width: 100%;
+    margin-bottom: 13%;
 }
 
 .page-layout {
-    // @include centerredContentVH($cross: flex-start, $main: center, $direction: row, $gap: 0px);
+    // @include centeredContentVH($cross: flex-start, $main: center, $direction: row, $gap: 0px);
     gap: 15px;
     width: 100%;
     height: 100%;
     margin: 29px 0 95px 0;
+
+    @media screen and (max-width: $sw-max) {
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+        margin: 0 0 95px 0;
+    }
+}
+
+.page-layout__content {
+    width: 100%;
+
+    @media screen and (max-width: $sw-max) {
+        order: 3;
+    }
 }
 
 .horizontal-wrap {
     @include centerredContentVH($cross: flex-start, $main: center, $direction: row, $gap: 0px);
+    width: 100%;
     gap: 1vw;
 }
 
@@ -25,31 +44,56 @@
     &.nav-wrap {
         position: fixed;
         top: 29px;
-        left: calc(50% - (920px / 1.5) - 3vw);
+        left: calc(50% - (920px / 1.5) - 2vw);
+
+        @media screen and (max-width: $sw-max) {
+            order: 2;
+            position: sticky;
+            top: 0;
+            left: auto;
+            background: #2e23c39c;
+            backdrop-filter: blur(4px);
+            width: 100%;
+        }
     }
 
     &.socials-wrap {
         position: fixed;
         top: 50dvh;
         transform: translateY(-50%);
-        right: calc(50% - (920px / 1.8) - 3vw);
+        right: calc(50% - (920px / 1.8) - 2vw);
+
+        @media screen and (max-width: $sw-breakPoint-2) {
+            order: 1;
+            position: fixed;
+            top: 16px;
+            right: 16px;
+            transform: none;
+        }
     }
 }
 
 .hero {
-    width: 920px;
-    background: url(../../assets/images/intro-bg.png) center;
+    width: 100%;
+    max-width: 920px;
+    background: url(../../assets/images/intro-bg.png) no-repeat center;
     background-size: 110%;
-    background-position-x: -59px;
-    background-position-y: 16px;
+    background-position-x: 68%;
+    background-position-y: -45%;
 
     &__image-wrap {
-        width: fit-content;
-        margin: 0 auto;
+        // width: fit-content;
+        // margin: 0 auto;
+
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        max-width: 920px;
+        padding: 0 16px;
     }
 
     &__intro-wrap {
-        
+        width: 100%;
 
     }
 }

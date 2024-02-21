@@ -4,11 +4,11 @@ import { SocialList } from "../UI/social-list/social-list.jsx";
 import { Image } from "../image/image.jsx";
 import { Intro } from "../intro/intro.jsx";
 import { AdvantagesSec } from "../advantages-section/advantages-section.jsx";
-import styles from "./page-layout.module.scss";
 import { PricesSection } from "../prices-section/prices-section.jsx";
 import { PortfolioSection } from "../portfolio-section/portfolio-section.jsx";
 import { AtmosphereSection } from "../atmosphere-section/atmosphere-section.jsx";
 import { Footer } from "../footer/footer.jsx";
+import styles from "./page-layout.module.scss";
 
 
 const PageLayout = ({data}) => {
@@ -26,7 +26,7 @@ const PageLayout = ({data}) => {
             <aside className={`${styles["page-layout__aside"]} ${styles["nav-wrap"]}`}>
                 <NavigationBar anchorsData={navigation}/>
             </aside>
-            <div className="page-layout__content">
+            <div className={styles["page-layout__content"]}>
                 <header className={styles["header"]}>
                     <div className={styles["horizontal-wrap"]}>
                         <div className={styles["hero"]}>
