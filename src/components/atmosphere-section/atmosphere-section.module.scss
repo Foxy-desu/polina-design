@@ -9,19 +9,20 @@
 
 .content-wrap {
     @include centerredContentVH($cross: flex-start, $main: flex-start, $direction: column, $gap: 0px);
-    width: 920px;
-    padding: 0 0 0 42px;
+    max-width: 920px;
+    width: 100%;
+    padding: 0 0 0 3%;
 }
 
 .atmosphere__header {
     width: 100%;
-    margin-bottom: 45px;
+    margin-bottom: 5.64%;
 }
 
 .atmosphere__vibe-block {
     @include centerredContentVH($cross: center, $main: flex-start, $direction: column, $gap: 0px);
     width: 100%;
-    margin-bottom: 47px;
+    margin-bottom: 10%;
     background: url(../../assets/images/vibe-block-decoration.png) no-repeat center right;
     background-size: 39%;
 
@@ -29,6 +30,7 @@
         width: 150px;
         height: 200px;
         border: 5px solid $clr-ltr;
+        box-shadow: 0px 4px 74px 0px rgb(65, 0, 203);
     }    
 }
 
@@ -39,22 +41,44 @@
 }
 
 .vibe-block__cards {
-    @include centerredContentVH($cross: flex-start, $main: flex-start, $direction: row, $gap: 0px);
+    @include centerredContentVH($cross: flex-start, $main: space-between, $direction: row, $gap: 0px);
     width: 100%;
-    gap: 30px;
+    align-self: flex-start;
+    padding-right: 17px;
+    flex-wrap: wrap;
+    max-width: 530px;
+    gap: 2cqw;
+    max-width: 547px;
+
+    @media  screen and (max-width: 520px) {
+        justify-content: center;
+        padding-right: 9px;
+    }
 }
 
 .card-wrap {
     width: 75px;
     height: 100px;
+
+    @media  screen and (max-width: 520px) {
+        &:last-child {
+            display: none;
+        }
+    }
 }
 
 .atmosphere__outstand-block {
     @include centerredContentVH($cross: flex-start, $main: flex-start, $direction: row, $gap: 0px);
+    max-width: 920px;
     width: 100%;
     background: url(../../assets/images/pricing-line-bg.svg) no-repeat;
-    background-size: cover;
-    padding-top: 80px;
+    background-size: contain;
+    padding-top: 6%;
+
+    @media  screen and (max-width: 520px) {
+        flex-direction: column;
+        align-items: center;
+    }
 }
 
 .outstand-block__plain-cards {
@@ -68,30 +92,46 @@
         margin-bottom: 26px;
     }
 
+    @media  screen and (max-width: 520px) {
+        display: none;
+    }
 }
 
 .outstand-block__large-examples {
     display: flex;
     transform: translate(-84px, -80px);
+
+    @media  screen and (max-width: 520px) {
+        transform: translate(0px, 0px);
+    }
 }
 
 .plain-cards__desc-wrap {
     max-width: 346px;
-    margin-bottom: 29px;
+    margin-bottom: 5%;
 }
 
 .large-examples__card-wrap {
-    width: 253px;
-    height: 433px;
+    $plain-card-w: 25cqw;
+    $designed-card-w: 30cqw;
+
+    @include cardSizeCQW($plain-card-w, 0.5793);
+    max-width: 253px;
+    max-height: 433px;
 
     &.designed-card-wrap {
-        width: 283px;
-        height: 484px;
+        @include cardSizeCQW($designed-card-w, 0.5793);
+        max-width: 283px;
+        max-height: 484px;
         transform: rotate(6.5deg);
         margin-left: -44px;
     }
 
     &.plain-card-wrap {
         transform: rotate(-17deg);
+    }
+
+    @media  screen and (max-width: 520px) {
+        transform: translate(0px, 0px);
     }
 }
