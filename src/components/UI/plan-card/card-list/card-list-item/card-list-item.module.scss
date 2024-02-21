@@ -2,11 +2,11 @@
 @import '../../../../../styles/abstracts/variables';
 
 .card-list__item {
-    font-size: $fs-tny;
-    line-height: 100%;
+    font-size: max(14px, $fs-tny);
+    line-height: 130%;
     list-style: disc;
     
     &::marker {
-        font-size: $fs-tnst;
+        font-size: max(10px, $fs-tny);
     }
 }
