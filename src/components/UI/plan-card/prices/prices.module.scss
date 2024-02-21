@@ -7,7 +7,7 @@
     &__current {
         @extend .prices;
         color: $clr-secondary-ltr;
-        font-size: $fs-lg;
+        font-size: max(35px, $fs-lg);
         font-weight: $fw-thkr;
         font-style: italic;
         line-height: 100%;
@@ -17,11 +17,15 @@
     &__previous {
         @extend .prices;
         color: $clr-secondary-lt;
-        font-size: $fs-sml;
+        font-size: max(19px, $fs-sml);
         line-height: 133.4%;
         font-weight: $fw-thn;
         text-decoration: line-through;
         text-decoration-thickness: 1px;
         text-align: right;
+
+        &_transparent {
+            text-decoration: none;
+        }
     }
 }
