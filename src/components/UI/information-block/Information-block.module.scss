@@ -2,6 +2,7 @@
 @import '../../../styles/abstracts/variables';
 
 .information-block {
+    width: 100%;
     
     &__heading {
         box-sizing: content-box;
@@ -15,8 +16,9 @@
     }
 
     &__desc {
-        padding-left: 9px;
+        padding-left: 3%;
         line-height: 133%;
+        font-size: min(14px, $fs-med-plus);
 
         &_lg {
             @extend .information-block__desc;
