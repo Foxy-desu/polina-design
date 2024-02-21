@@ -5,13 +5,20 @@
     margin: 0;
     padding: 0;
     font-family: Montserrat;
-    font-size: 16px;
+    font-size: 1rem;
     color: rgb(255, 255, 255);
+}
+
+html {
+    @media screen and (max-width: 840px) {
+        font-size: 1.9vw;
+    }
 }
 
 body {
     background-color: rgb(66, 1, 206);
     overflow-x: hidden;
+    
 }
 
 ul {
