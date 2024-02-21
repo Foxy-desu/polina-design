@@ -11,3 +11,8 @@
     -moz-box-shadow: 0px 0px 0px 1px rgba(75, 0, 128, 1) inset;
     box-shadow: 0px 0px 0px 1px rgba(75, 0, 128, 1) inset;
 }
+
+@mixin cardSizeCQW($cardWidth, $ratio) {
+    width: $cardWidth;
+    height: #{$cardWidth / $ratio}
+}
