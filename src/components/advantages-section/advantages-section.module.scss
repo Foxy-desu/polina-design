@@ -15,16 +15,17 @@
 }
 
 .advantages__header {
-    margin-bottom: 29px;
+    margin-bottom: 1%;
 }
 
 .content-wrap {
-    width: 920px;
-    padding: 0 42px;
-    max-width: 954px;
+    //max-width: 920px;
+    padding: 0 4%;
+    max-width: 920px;
     background: url(../../assets/images/advantages-logo-decoration.png) no-repeat center bottom;
-    background-size: 220%;
-    background-position-x: -597px;
+    background-size: 200%;
+    background-position-x: 58%;
+    background-position-y: 93%;
     
 }
 
@@ -34,8 +35,15 @@
     grid-template-rows: 1fr 1fr;
     grid-auto-rows: auto;
     grid-auto-flow: row;
-    column-gap: 128px;
-    row-gap: 58px;
-    margin-bottom: 245px;
+    column-gap: 9%;
+    row-gap: 31%;
+    margin-bottom: 34%;
+    transition: 0.2s ease;
+
+    @media screen and (max-width: $sw-breakPoint-5){
+        column-gap: 20%;
+        row-gap: 13%;
+        margin-bottom: 34%;
+    }
 
 }
