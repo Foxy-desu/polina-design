@@ -3,9 +3,11 @@
 
 .btn {
     @include centerredContentVH;
-    width: 255px;
-    height: 38px;
-    font-size: $fs-tny;
+    //width: 255px;
+    //height: 38px;
+    width: 100%;
+    height: 100%;
+    font-size: max(14px, $fs-tny);
     font-weight: $fw-thk;
     color: $clr-lt;
     background-color: $clr-base;
@@ -19,8 +21,8 @@
 
         &_lg {
             @extend .btn_colored;
-            width: 167px;
-            height: 57px;
+            //width: 167px;
+            //height: 57px;
             font-weight: $fw-thkr;
             padding-bottom: 3px;
         }
