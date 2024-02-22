@@ -4,8 +4,4 @@
 .social-list {
     @include centerredContentVH(flex-start, center, column, 12px);
     width: fit-content;
-
-    @media screen and (max-width: $sw-breakPoint-2) {
-        gap: 2px;
-    }
 }
