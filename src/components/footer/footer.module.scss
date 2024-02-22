@@ -16,8 +16,12 @@
     padding: 42px;
 }
 
+.footer__link-mailto {
+    font-size: max(14px, $fs-sml);
+}
+
 .footer__link-tel {
 
-    font-size: $fs-sml;
+    font-size: max(14px, $fs-sml);
     font-weight: $fw-thkr;
 }

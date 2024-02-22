@@ -11,7 +11,11 @@
     @include centerredContentVH($cross: center, $main: flex-start, $direction: column, $gap: 0px);
     max-width: 920px;
     width: 100%;
-    padding: 0 3%;
+    padding: 0 45px;
+
+    @media screen and (max-width: 1316px) {
+        padding: 0 3%;
+    }
 }
 
 .portfolio__header {
@@ -29,9 +33,18 @@
     margin-bottom: calc(102px + 52px);
     gap: 1cqw;
 
-    @media screen and (max-width: 865px) {
+    @media screen and (max-width: 845px) {
         justify-content: center;
         grid-template-columns: repeat(auto-fill, minmax(192px, 193px));
+    }
+
+    @media screen and (max-width: 650px) {
+        justify-content: center;
+        grid-template-columns: repeat(auto-fill, minmax(192px, 193px));
+    }
+
+    @media screen and (max-width: 629px) {
+        margin-bottom: 13%;
     }
 
 }
@@ -46,7 +59,7 @@
         transform: translateY(102px);
     }
 
-    @media screen and (max-width: 865px) {
+    @media screen and (max-width: 845px) {
         &:nth-child(2n) {
             transform: translateY(0);
         }
@@ -62,7 +75,7 @@
 
     }
 
-    @media screen and (max-width: 646px) {
+    @media screen and (max-width: 629px) {
         &:nth-child(3n + 2) {
             transform: translateY(0);
         }

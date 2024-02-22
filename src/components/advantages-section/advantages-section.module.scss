@@ -20,12 +20,16 @@
 
 .content-wrap {
     //max-width: 920px;
-    padding: 0 4%;
+    padding: 0 46px;
     max-width: 920px;
     background: url(../../assets/images/advantages-logo-decoration.png) no-repeat center bottom;
     background-size: 200%;
     background-position-x: 58%;
     background-position-y: 93%;
+
+    @media screen and (max-width: 1316px) {
+        padding: 0 4%;
+    }
     
 }
 
