@@ -26,10 +26,14 @@
     @include centerredContentVH($cross: center, $main: flex-start, $direction: column, $gap: 0px);
     width: 100%;
     max-width: 952px;
-    padding: 0 4%;
+    padding: 0 61px;
     background: url(../../assets/images/pricing-line-bg.svg) no-repeat center;
     background-position-y: 79%;
     background-size: contain;
+
+    @media screen and (max-width: 1316px) {
+        padding: 0 4%;
+    }
 }
 
 .prices__header {
