@@ -13,6 +13,10 @@
   border: 1px solid $clr-secondary;
   border-radius: 30px;
 
+  &:hover {
+    cursor: pointer;
+  }
+
 }
 
 .burger-button__line {
