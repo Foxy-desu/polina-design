@@ -8,8 +8,8 @@ import { PricesSection } from "../prices-section/prices-section.jsx";
 import { PortfolioSection } from "../portfolio-section/portfolio-section.jsx";
 import { AtmosphereSection } from "../atmosphere-section/atmosphere-section.jsx";
 import { Footer } from "../footer/footer.jsx";
-import styles from "./page-layout.module.scss";
 import {BurgerNav} from "../burger-nav/burger-nav";
+import styles from "./page-layout.module.scss";
 
 
 const PageLayout = ({data}) => {
@@ -32,8 +32,12 @@ const PageLayout = ({data}) => {
     }, [setPos])
 
     window.addEventListener('resize', ()=> {
-        if (window.innerWidth > 1316) setBlock("navbar");
-        else setBlock("burger");
+        if (window.innerWidth > 1316) {
+            if(block === "burger") setBlock("navbar");
+        }
+        else {
+            if(block === "navbar") setBlock("burger");
+        }
     });
 
 
@@ -71,10 +75,7 @@ const PageLayout = ({data}) => {
                 <Footer footerData={footer}/>
             </div>
             <aside className={`${styles["page-layout__aside"]} ${styles["socials-wrap"]}`}>
-                {block === "navbar"
-                    ? <SocialList socialData={socials}/>
-                    : false
-                }
+                <SocialList socialData={socials}/>
             </aside>
 
         </div>
