@@ -8,7 +8,7 @@
         box-sizing: content-box;
         width: fit-content;
         color: $clr-base-dk;
-        font-size: $fs-med-plus;
+        font-size: max(14px, $fs-med-plus);
         font-weight: $fw-thkr;
         background-color: $clr-secondary;
         padding: 0 9px;
@@ -18,11 +18,11 @@
     &__desc {
         padding-left: 3%;
         line-height: 133%;
-        font-size: min(14px, $fs-med-plus);
+        font-size: max(14px, $fs-tny);
 
         &_lg {
             @extend .information-block__desc;
-            font-size: $fs-med-plus;
+            font-size: max(14px, $fs-med-plus);
         }
     } 
     
@@ -30,6 +30,7 @@
 
 .accent {
         background-color: $clr-primary;
+        font-size: max(15px, $fs-tny);
         font-weight: $fw-thkr-plus;
         padding: 0 5px;
     }

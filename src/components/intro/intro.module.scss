@@ -11,7 +11,7 @@
 
     &__header {
         color: $clr-secondary-ltr;
-        font-size: $fs-lgst;
+        font-size: max(19px, $fs-lgst);
         font-weight: $fw-thkst;
         line-height: 100.9%;
         text-transform: uppercase;
