@@ -1,4 +1,4 @@
-import React, {useCallback, useState} from "react";
+import React, {useCallback, useEffect, useState} from "react";
 import { NavigationBar } from "../navigation-bar/navigation-bar.jsx";
 import { SocialList } from "../UI/social-list/social-list.jsx";
 import { Image } from "../image/image.jsx";
@@ -31,15 +31,20 @@ const PageLayout = ({data}) => {
         setPos(val);
     }, [setPos])
 
-    window.addEventListener('resize', ()=> {
-        if (window.innerWidth > 1316) {
-            if(block === "burger") setBlock("navbar");
-        }
-        else {
-            if(block === "navbar") setBlock("burger");
-        }
-    });
+    useEffect(() => {
+        const handleWindowResize = () => {
+            if (window.innerWidth > 1316) setBlock("navbar");
+            else {
+                setBlock("burger");
+            }
+        };
 
+        window.addEventListener('resize', handleWindowResize);
+
+        return () => {
+            window.removeEventListener("resize", handleWindowResize);
+        }
+    }, []);
 
     return (
         <div className={styles["page-layout"]}>
