@@ -5,12 +5,8 @@ import { CardList } from "./card-list/card-list.jsx";
 import { Prices } from "./prices/prices.jsx";
 import styles from './plan-card.module.scss';
 
-const PlanCard = ({planName, perks, price, prevPrice, discount, type, effects, index})=> {
+const PlanCard = ({planName, perks, price, prevPrice, discount, type, shadow= "false"})=> {
 
-    // const [value, setValue] =useState(forceBack);
-    function hoverHandler() {
-        effects.setHover(index);
-    }
     return (
     <article className={
         `${styles["plan-card"]}
@@ -19,8 +15,11 @@ const PlanCard = ({planName, perks, price, prevPrice, discount, type, effects, i
          : styles["plan-card_dark"]}
          ${type.includes('glowing')
          ? ' ' + styles["plan-card_glowing"]
+         : false}
+         ${shadow.includes("slight") && type.includes('glowing')
+         ? " " + styles["slight-shadow"]
          : false}`
-        } onMouseOver={hoverHandler} style={effects.hoverIndex === index? {zIndex: index} : {zIndex: -index}}>
+        } >
         <div className={styles["plan-card__card-header"]}>
             <CardHeader content={planName} discount={discount}/>
         </div>
