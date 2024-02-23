@@ -34,6 +34,14 @@
     @media screen and (max-width: 1316px) {
         padding: 0 4%;
     }
+
+    @media screen and (max-width: 873px) {
+        background: url(../../assets/images/pricing-line-bg.svg) no-repeat top;
+        background-position-y: 7cqh;
+        background-size: 100%;
+    }
+
+
 }
 
 .prices__header {
