@@ -13,7 +13,7 @@
         
         color: $clr-secondary-ltr;
         font-weight: $fw-thkst;
-        font-size: $fs-lgst;
+        font-size: max(35px, $fs-lgst);
         text-transform: uppercase;
         padding: 3% 0;
     }
