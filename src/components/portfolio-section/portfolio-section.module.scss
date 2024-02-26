@@ -84,6 +84,19 @@
             display: block;
         }
     }
+
+    @media screen and (max-width: 415px) {
+        width: 250px;
+        height: 427px;
+    }
+
+    &_minimized {
+        @media screen and (max-width: 415px) {
+            &:nth-child(n + 2) {
+                display: none;
+            }
+        }
+    }
 }
 
 .portfolio__btns {
@@ -99,4 +112,8 @@
     max-height: 38px;
     min-height: 30px;
     min-width: fit-content;
+
+    &_hidden {
+        display: none;
+    }
 }
