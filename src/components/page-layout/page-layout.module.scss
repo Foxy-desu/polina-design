@@ -28,7 +28,7 @@
         flex-direction: column;
         align-items: center;
         gap: 0;
-        margin: 0;
+        margin: 62px 0 0; //test
     }
 }
 
@@ -73,7 +73,7 @@
             left: calc(50% - (920px / 1.5) - 2vw);
 
             @media screen and (max-width: $sw-max) {
-                position: sticky;
+                position: fixed; //test
                 bottom: auto;
                 top: 0;
                 bottom: auto;
