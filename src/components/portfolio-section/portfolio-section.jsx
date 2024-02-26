@@ -17,6 +17,7 @@ const ShowMoreBtn = ({isMinimized, setMinimized}) => {
 
     useEffect(()=> {
         if(isMinimized === true) setDisplayMode(true);
+        else setDisplayMode(false);
     }, [isMinimized])
 
     return (
@@ -58,6 +59,7 @@ export const PortfolioSection = ({portfolioData}) => {
     }, []);
     useEffect(()=> {
         if(width <= breakpoint) setMinimized(true);
+        else setMinimized(false);
     }, [width])
 
     function renderCards(cards) {
