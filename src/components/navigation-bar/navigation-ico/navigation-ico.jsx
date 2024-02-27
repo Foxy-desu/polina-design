@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./navigation-ico.module.scss";
 import useImage from "../../../custom-hooks/use-image";
+import {HashLink as Link} from "react-router-hash-link";
 
 export const NavigationIco = ({content, sectionId, icoPath, id, setClickedId, clickHandler= false}) => {
     const {loading, error, image} = useImage(icoPath);
@@ -27,9 +28,9 @@ export const NavigationIco = ({content, sectionId, icoPath, id, setClickedId, cl
             {loading
                 ? "загрузка"
                 : (
-                    <a className={styles["nav-bar__logo"]} href={'#' + sectionId}>
+                    <Link className={styles["nav-bar__logo"]} to={'/#' + sectionId}>
                         <img className={styles["nav-bar__logo-img"]} src={image} alt={content}/>
-                    </a>
+                    </Link>
                 )
             }
         </li>
