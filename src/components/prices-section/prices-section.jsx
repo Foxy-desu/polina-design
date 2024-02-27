@@ -30,7 +30,7 @@ export const PricesSection = ({pricesData, blockType}) => {
                 <li
                     key={plan.id}
                     className={styles["prices__list-item"]}>
-                    <PlanCard planName={plan.planName} perks={plan.perks} price={plan.price} prevPrice={plan.prevPrice} discount={plan.discount} type={plan.type}/>
+                    <PlanCard planName={plan.planName} perks={plan.perks} price={plan.price} prevPrice={plan.prevPrice} discount={plan.discount} type={plan.type} path="/order"/>
                 </li>
                 )
             })
@@ -51,7 +51,7 @@ export const PricesSection = ({pricesData, blockType}) => {
                     : <PricesCarousel plans={plans}/>
                 }
                 <div className={styles["prices__btn"]}>
-                    <Button content={btn.content}/>
+                    <Button content={btn.content} path={btn.to}/>
                 </div>
             </div>
         </section>

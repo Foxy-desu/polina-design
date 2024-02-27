@@ -77,7 +77,7 @@ export const PortfolioSection = ({portfolioData}) => {
 
         return buttons.map((button)=> {
             return <div key={button.id} className={styles["portfolio__btn-wrap"]}>
-                <Button content={button.content} type={button.type}/>
+                <Button content={button.content} type={button.type} path={button.to}/>
             </div>
         })
     };

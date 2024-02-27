@@ -1,8 +1,9 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import styles from './button.module.scss';
 
 //TODO: the component is dirty. make it clear
-const Button =({content, type=''})=> {
+const Button =({content, type='', path})=> {
     const additionalStyle = getStyle(checkType(type));
 
     function checkType(type) {
@@ -21,7 +22,8 @@ const Button =({content, type=''})=> {
         return styles[type];
     };
     
-    return <button className={`${styles.btn}${' ' + additionalStyle}`} type='button'>{content}</button>
+    // return <button className={`${styles.btn}${' ' + additionalStyle}`} type='button'>{content}</button>
+    return <Link className={`${styles.btn}${' ' + additionalStyle}`} to={path}>{content}</Link>
 };
 
 export {Button};

@@ -17,7 +17,7 @@ export const PricesCarousel = ({plans}) => {
                         <div key={plan.id}
                                      className={styles["plan-wrap"]}
                         >
-                            <PlanCard planName={plan.planName} perks={plan.perks} price={plan.price} prevPrice={plan.prevPrice} discount={plan.discount} type={plan.type} shadow={"slight"}
+                            <PlanCard planName={plan.planName} perks={plan.perks} price={plan.price} prevPrice={plan.prevPrice} discount={plan.discount} type={plan.type} shadow={"slight"} path={"/order"}
                             />
                         </div>
                     </SwiperSlide>
