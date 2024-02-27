@@ -4,7 +4,7 @@ const state = {
             {
                 id: "navLink1",
                 content: "Полина Дизайн логотип",
-                sectionId: "header",
+                sectionId: "card-design",
                 type: "image",
                 icoPath: "icons/plndsg-logo.svg"
             },
@@ -172,7 +172,7 @@ const state = {
                 id: "priceBtn1",
                 content: "полный список цен",
                 type: "",
-                action: ""
+                to: "/all-prices"
             },
         ]
     },
@@ -269,13 +269,13 @@ const state = {
                 id: "portBtn1",
                 content: "полный список цен",
                 type: "",
-                action: ""
+                to: "/all-prices"
             },
             {
                 id: "portBtn2",
                 content: "сделать заказ",
                 type: "colored",
-                action: ""
+                to: "/order"
             }
         ],
     },
