@@ -6,7 +6,7 @@ import heroImage from "../../assets/images/hero-img.svg";
 export const Image = (props) => {
 
     return (
-        < div className={styles["image"]} id="header">
+        < div className={styles["image"]} id="card-design">
             <img className={styles["image__main-text"]} src={heroImage} alt="Эффектный дизайн"/>
             <div className={styles["image__block-wrap"]}>
                 <div className={styles["image__add-block"]}>DИZАЙN</div>
