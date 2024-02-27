@@ -1,15 +1,13 @@
 import React, {useCallback, useEffect, useState} from "react";
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { NavigationBar } from "../navigation-bar/navigation-bar.jsx";
 import { SocialList } from "../UI/social-list/social-list.jsx";
-import { Image } from "../image/image.jsx";
-import { Intro } from "../intro/intro.jsx";
-import { AdvantagesSec } from "../advantages-section/advantages-section.jsx";
-import { PricesSection } from "../prices-section/prices-section.jsx";
-import { PortfolioSection } from "../portfolio-section/portfolio-section.jsx";
-import { AtmosphereSection } from "../atmosphere-section/atmosphere-section.jsx";
 import { Footer } from "../footer/footer.jsx";
 import {BurgerNav} from "../burger-nav/burger-nav";
+import {MainScreen} from "../../screens/main/main-screen";
 import styles from "./page-layout.module.scss";
+import {AllPricesScreen} from "../../screens/all-prices/all-prices-screen";
+import {OrderScreen} from "../../screens/order/order-screen";
 
 
 const PageLayout = ({data}) => {
@@ -21,6 +19,7 @@ const PageLayout = ({data}) => {
     const atmosphere = data.atmosphereSection;
     const navigation = data.navigation.anchors;
     const footer = data.footer;
+
 
     const [block, setBlock] = useState(()=> {
         if (window.innerWidth > 1316) return "navbar";
@@ -58,27 +57,26 @@ const PageLayout = ({data}) => {
                     : <BurgerNav anchorsData={navigation} socialData={socials} setPos={setPosWrap}></BurgerNav>
                 }
             </aside>
-            <div className={styles["page-layout__content"]}>
-                <header className={styles["header"]}>
-                    <div className={styles["horizontal-wrap"]}>
-                        <div className={styles["hero"]}>
-                            <div className={styles["hero__image-wrap"]}>
-                                <Image/>
-                            </div>
-                            <div className={styles["hero__intro-wrap"]}>
-                                <Intro introData={intro}/>
-                            </div>
-                        </div>
-                    </div>
-                </header>
-                <main className="main">
-                    <AdvantagesSec advantagesData={advantages}/>
-                    <PricesSection pricesData={prices} />
-                    <PortfolioSection portfolioData={portfolio}/>
-                    <AtmosphereSection atmosphereData={atmosphere}/>
-                </main>
-                <Footer footerData={footer}/>
-            </div>
+                <div className={styles["page-layout__content"]}>
+                        <Routes>
+                            <Route path={"*"} element={
+                                <MainScreen
+                                    advantages={advantages}
+                                    intro={intro}
+                                    prices={prices}
+                                    portfolio={portfolio}
+                                    atmosphere={atmosphere}
+                                />
+                            }/>
+                            <Route path={"/all-prices"} element={
+                                <AllPricesScreen allPricesData={{header: {content: "все цены", type: "2" }}}/>
+                            }/>
+                            <Route path={"/order"} element={
+                                <OrderScreen orderData={{header: {content: "заказать", type: "2" }}}/>
+                            }/>
+                        </Routes>
+                    <Footer footerData={footer}/>
+                </div>
             <aside className={`${styles["page-layout__aside"]} ${styles["socials-wrap"]}`}>
                 <SocialList socialData={socials}/>
             </aside>
