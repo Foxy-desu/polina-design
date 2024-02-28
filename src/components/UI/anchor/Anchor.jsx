@@ -10,7 +10,7 @@ const Anchor = (props) => {
         else return;
     }
     
-    return <div className={`${clickedId === id? styles.anchor + ' ' + styles.anchor_active : styles.anchor}`} onClick={()=> {
+    return <div className={`${clickedId === id? styles["anchor"] + ' ' + styles["anchor_active"] : styles["anchor"]}`} onClick={()=> {
         setClickedId(id);
         handleCheck();
     }}>
