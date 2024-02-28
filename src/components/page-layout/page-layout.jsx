@@ -72,7 +72,7 @@ const PageLayout = ({data}) => {
                                 <AllPricesScreen allPricesData={{header: {content: "все цены", type: "2" }}}/>
                             }/>
                             <Route path={"/order"} element={
-                                <OrderScreen orderData={{header: {content: "заказать", type: "2" }}}/>
+                                <OrderScreen orderData={prices}/>
                             }/>
                         </Routes>
                     <Footer footerData={footer}/>
