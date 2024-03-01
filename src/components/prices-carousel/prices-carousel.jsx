@@ -17,13 +17,31 @@ export const PricesCarousel = ({plans}) => {
                         <div key={plan.id}
                                      className={styles["plan-wrap"]}
                         >
-                            <PlanCard planName={plan.planName} perks={plan.perks} price={plan.price} prevPrice={plan.prevPrice} discount={plan.discount} type={plan.type} shadow={"slight"} path={"/order"}
+                            <PlanCard
+                                planName={plan.planName}
+                                perks={plan.perks}
+                                price={plan.price}
+                                prevPrice={plan.prevPrice}
+                                discount={plan.discount}
+                                type={plan.type}
+                                shadow={"slight"}
+                                path={"/order"}
+                                id={plan.id}
+                                addToLocal={addToLocal}
                             />
                         </div>
                     </SwiperSlide>
                 )
             })
         )
+    }
+
+    function addToLocal(id) {
+        const data = plans.find((plan)=> {
+            return plan.id === id;
+        }).id;
+
+        localStorage.setItem('plan', data);
     }
 
     return (
