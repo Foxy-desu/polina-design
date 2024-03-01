@@ -1,0 +1,157 @@
+@import "../../styles/abstracts/mixins";
+@import "../../styles/abstracts/variables";
+
+.message__text {
+  margin-bottom: 8%;
+}
+
+.message__button {
+  width: 100%;
+  height: 30px;
+  max-width: 200px;
+}
+.form {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, auto);
+  grid-template-areas:
+  "picker picker picker picker"
+  "desc desc desc desc"
+  "phone phone phone phone"
+  "comment comment comment comment"
+  "buttons buttons buttons buttons"
+}
+
+.options-list {
+  margin-top: 2%;
+  padding-left: 3%;
+  width: 100%;
+  height: 35px;
+  background: $clr-base;
+  font-size: max(14px, 1rem);
+  border: 1px solid rgb(143, 0, 255);
+  color: #63f163;
+
+  &:focus-visible {
+    outline-color: $clr-secondary;
+    outline-style: solid;
+  }
+}
+
+.options-list__label {
+  font-size: max(14px, 1rem);
+}
+
+.form__item-picker {
+  grid-area: picker;
+  margin-bottom: 5%;
+}
+
+.form__price {
+  grid-area: price;
+}
+
+.form__phone-input {
+  grid-area: phone;
+  margin-bottom: 5%;
+}
+
+.form__description {
+  grid-area: desc;
+  margin-bottom: 5%;
+}
+
+.form__comment {
+  grid-area: comment;
+  margin-bottom: 5%;
+}
+
+.form__buttons {
+  grid-area: buttons;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 10%;
+}
+
+.form__button {
+  width: 100%;
+  height: 30px;
+  max-width: 200px;
+}
+
+.options-list__option {
+
+}
+
+.accent {
+  background-color: $clr-primary;
+  font-size: max(15px, $fs-tny);
+  font-weight: $fw-thk;
+  padding: 0 5px;
+}
+
+.description__price {
+  margin-bottom: 5%;
+  font-size: max(14px, $fs-tny);
+}
+
+.heading {
+  font-size: max(16px, $fs-tny);
+}
+
+.perks-heading {
+  margin-bottom: 1%;
+}
+
+.perks__list-item {
+  font-size: max(14px, $fs-tny);
+  &:before {
+    content: "";
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background: url("../../assets/icons/triangle.svg");
+    transform: rotate(225deg);
+    margin-right: 1.5%;
+  }
+}
+
+.phone-input__input {
+  margin-top: 2%;
+
+  padding-left: 3%;
+  width: 100%;
+  height: 35px;
+  background: $clr-base;
+  font-size: max(14px, 1rem);
+  border: 1px solid rgb(143, 0, 255);
+
+  &:focus-visible {
+    outline-color: $clr-secondary;
+    outline-style: solid;
+  }
+}
+
+.phone-input__label {
+  font-size: max(14px, 1rem);
+}
+
+.comment__textarea {
+  width: 100%;
+  padding: 3% 3% 0;
+  background: $clr-base;
+  font-size: max(14px, 1rem);
+  border: 1px solid rgb(143, 0, 255);
+
+  &:focus-visible {
+    outline-color: $clr-secondary;
+    outline-style: solid;
+  }
+
+  &::placeholder {
+    font-size: max(16px, $fs-tny);
+    color: #63f163;
+  }
+}
