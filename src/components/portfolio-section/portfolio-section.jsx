@@ -55,15 +55,15 @@ const Card = ({card, isMinimized})=> {
             }
 
         };
+        checkBlocksVisibility();
 
-        checkBlocksVisibility()
-        window.addEventListener('scroll', ()=> checkBlocksVisibility());
+        window.addEventListener('scroll', checkBlocksVisibility);
 
         return ()=> {
-            window.removeEventListener('scroll', ()=> checkBlocksVisibility())
+            window.removeEventListener('scroll', checkBlocksVisibility)
         }
 
-    });
+    }, [showClass]);
 
     return (
         <div ref={block} key={card.id} className={
