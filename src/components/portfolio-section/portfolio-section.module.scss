@@ -54,9 +54,14 @@
     height: 328px;
     place-self: center;
 
+    //animate
+    opacity: 0;
+    transform: translateY(15px);
+    transition: transform 0.9s, opacity 0.9s;
+
 
     &:nth-child(2n) {
-        transform: translateY(102px);
+        transform: translateY(110px);
     }
 
     @media screen and (max-width: 845px) {
@@ -97,6 +102,53 @@
             }
         }
     }
+}
+
+.portfolio__card-wrap_show {
+    opacity: 1;
+    transform: translateY(0px);
+
+    &:nth-child(2n) {
+        transform: translateY(90px);
+    }
+
+    @media screen and (max-width: 845px) {
+        &:nth-child(2n) {
+            transform: translateY(0);
+        }
+
+        &:nth-child(3n + 2) {
+            transform: translateY(90px);
+        }
+
+        &:last-child {
+            display: none;
+        }
+
+
+    }
+    @media screen and (max-width: 629px) {
+        &:nth-child(3n + 2) {
+            transform: translateY(0);
+        }
+
+        &:last-child {
+            display: block;
+        }
+    }
+
+    @media screen and (max-width: 415px) {
+        width: 250px;
+        height: 427px;
+    }
+
+    //&_minimized {
+    //    @media screen and (max-width: 415px) {
+    //        &:nth-child(n + 2) {
+    //            display: none;
+    //        }
+    //    }
+    //}
 }
 
 .portfolio__btns {

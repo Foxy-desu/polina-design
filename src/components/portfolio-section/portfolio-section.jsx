@@ -33,6 +33,47 @@ const ShowMoreBtn = ({isMinimized, setMinimized}) => {
             <Button content={button.content} type={button.type}/>
         </div>
     )
+};
+
+const Card = ({card, isMinimized})=> {
+    const block = React.createRef();
+    const [showClass, setShowClass] = useState("");
+
+
+    useEffect(() => {
+        function checkBlocksVisibility() {
+            const target = block.current;
+            if (target) {
+                let windowHeight = window.innerHeight;
+                let blockPos = target.getBoundingClientRect().top;
+
+                if(blockPos < windowHeight - 200) {
+                    setShowClass("portfolio__card-wrap_show");
+                } else {
+                    setShowClass("");
+                }
+            }
+
+        };
+
+        checkBlocksVisibility()
+        window.addEventListener('scroll', ()=> checkBlocksVisibility());
+
+        return ()=> {
+            window.removeEventListener('scroll', ()=> checkBlocksVisibility())
+        }
+
+    });
+
+    return (
+        <div ref={block} key={card.id} className={
+            `${isMinimized
+                ? `${styles["portfolio__card-wrap"]}${showClass? " " + styles["portfolio__card-wrap_show"]: ""} ${styles["portfolio__card-wrap_minimized"]}`
+                : `${styles["portfolio__card-wrap"]}${showClass? " " + styles["portfolio__card-wrap_show"]: ""}`}`}
+             >
+            <PhotoFrame info={card.info} path={card.path}/>
+        </div>
+    )
 }
 export const PortfolioSection = ({portfolioData}) => {
     const heading = portfolioData.sectionHeading;
@@ -40,7 +81,7 @@ export const PortfolioSection = ({portfolioData}) => {
     const btns = portfolioData.buttons;
     const breakpoint = 415;
 
-    const [width, setWidth] = useState(()=> {
+    const [width, setWidth] = useState(() => {
         return window.innerWidth
     })
     const [isMinimized, setMinimized] = useState(()=> {
@@ -63,13 +104,9 @@ export const PortfolioSection = ({portfolioData}) => {
     }, [width])
 
     function renderCards(cards) {
+
         return cards.map((card)=> {
-            return <div key={card.id} className={
-                isMinimized
-                    ? styles["portfolio__card-wrap"] + ' ' + styles["portfolio__card-wrap_minimized"]
-                    : styles["portfolio__card-wrap"]}>
-                <PhotoFrame info={card.info} path={card.path}/>
-            </div>
+            return <Card card={card} isMinimized={isMinimized}/>
         })
     }
 
