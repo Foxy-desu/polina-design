@@ -5,7 +5,7 @@ import { CardList } from "./card-list/card-list.jsx";
 import { Prices } from "./prices/prices.jsx";
 import styles from './plan-card.module.scss';
 
-const PlanCard = ({planName, perks, price, prevPrice, discount, type, shadow= "false", path})=> {
+const PlanCard = ({planName, perks, price, prevPrice, discount, type, shadow= "false", path, id, addToLocal})=> {
 
     return (
     <article className={
@@ -32,7 +32,7 @@ const PlanCard = ({planName, perks, price, prevPrice, discount, type, shadow= "f
             </div>
         </div>
         <div className={styles["plan-card__card-btn"]}>
-            <Button content='заказать' type='lg' path={path}/>
+            <Button content='заказать' type='lg' path={path} btnId={id} addToLocal={addToLocal}/>
         </div>
     </article>)
 }

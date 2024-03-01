@@ -40,6 +40,8 @@ const ItemPicker = ({options, setSelectText, selectText})=> {
 };
 const PhoneInput = ({fieldText, setFieldText})=> {
 
+
+
     return (
         <label className={style["phone-input__label"]}>
             Введите номер телефона <br/>
@@ -48,8 +50,9 @@ const PhoneInput = ({fieldText, setFieldText})=> {
                   type="tel"
                   value={fieldText}
                   onChange={(event) => {
-                      setFieldText(event.target.value)
+                      setFieldText(event.target.value.trim())
                   }}
+                   placeholder={"+7xxxxxxxxxx"}
             />
         </label>
     )
@@ -89,26 +92,6 @@ const ItemDesc = ({selectText, options}) => {
         </div>
     )
 };
-const ItemPrice = ({selectText, options}) => {
-
-    if(selectText) {
-        function getPrice(selectText, options) {
-            return options.find((option)=> {
-                return option.id === selectText;
-            }).price;
-        }
-
-        return (
-            <div>
-                <span>{getPrice(selectText, options)}</span> <span>Руб</span>
-            </div>
-        )
-    }
-    else return "";
-
-
-}
-
 const Comment = ({commentText, setCommentText}) => {
 
     return (
@@ -156,15 +139,26 @@ export const OrderForm = ({data}) => {
                 userContact: fieldText,
                 userComment: commentText,
             };
+        };
+        function handleValidation(fieldText) {
+            const regex = /\(?\+[0-9]{1,3}\)? ?-?[0-9]{1,3} ?-?[0-9]{3,5} ?-?[0-9]{4}( ?-?[0-9]{3})? ?(\w{1,10}\s?\d{1,6})?/;
+            if(fieldText.match(regex)) {
+                console.log(prepareObject());
+                setBlockType("alert");
+                localStorage.removeItem("plan");
+            }
+            else window.alert("Убедитесь, что номер введен верно");
+
+
         }
         if(fieldText) {
-            console.log(prepareObject());
-            setBlockType("alert");
-            localStorage.removeItem("plan");
+            handleValidation(fieldText);
         }
         else window.alert("Пожалуйста, введите номер телефона")
 
     };
+
+
 
     return (
         <>
@@ -178,7 +172,7 @@ export const OrderForm = ({data}) => {
                 </div>
                 : (
                     <form className={style["form"]}>
-                        <div className={style["form__item-picker"]}>
+                            <div className={style["form__item-picker"]}>
                         <ItemPicker options={options} setSelectText={setSelectText} selectText={selectText}/>
                             </div>
                             <div className={style["form__phone-input"]}>
