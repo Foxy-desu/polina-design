@@ -4,6 +4,8 @@
 .order {
   @include centerredContentVH($cross: center, $main: center, $direction: column, $gap: 0px);
   position: relative;
+  flex-grow: 1;
+  justify-content: flex-start;
 }
 .gradient {
   z-index: -1;
@@ -15,7 +17,7 @@
 }
 
 .content-wrap {
-  //max-width: 920px;
+  width: 100%;
   padding: 0 46px;
   max-width: 920px;
 
