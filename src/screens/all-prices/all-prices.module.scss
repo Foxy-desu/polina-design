@@ -4,6 +4,8 @@
 .all-prices {
   @include centerredContentVH($cross: center, $main: center, $direction: column, $gap: 0px);
   position: relative;
+  flex-grow: 1;
+  justify-content: flex-start;
 }
 .gradient {
   z-index: -1;
@@ -15,12 +17,35 @@
 }
 
 .content-wrap {
-  //max-width: 920px;
+  display: flex;
+  flex-direction: column;
   padding: 0 46px;
   max-width: 920px;
+  width: 100%;
 
   @media screen and (max-width: 1316px) {
     padding: 0 4%;
   }
 
+}
+
+.accent {
+  background-color: $clr-primary;
+  font-size: max(15px, $fs-tny);
+  font-weight: $fw-thk;
+  padding: 0 5px;
+}
+.all-prices__list {
+  margin-bottom: 18%;
+}
+
+.all-prices__list-item {
+  margin-bottom: 3%;
+}
+
+.all-prices__btns {
+  height: 35px;
+  max-width: 200px;
+  min-width: 150px;
+  align-self: center;
 }
