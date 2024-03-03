@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpolina_design=self.webpackChunkpolina_design||[]).push([[3189],{3189:(s,a,e)=>{s.exports=e.p+"static/media/socials-vk-ico.e684ad667d5404a10da2.svg"}}]);

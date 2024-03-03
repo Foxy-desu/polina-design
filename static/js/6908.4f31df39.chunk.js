@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpolina_design=self.webpackChunkpolina_design||[]).push([[6908],{6908:(e,s,i)=>{e.exports=i.p+"static/media/socials-telegram-ico.2e4f932df1f45cbb1053.svg"}}]);

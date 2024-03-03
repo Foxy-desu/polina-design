@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpolina_design=self.webpackChunkpolina_design||[]).push([[9729],{9729:(s,e,p)=>{s.exports=p.p+"static/media/plndsg-logo.44384d7b747d8342f6ac.svg"}}]);

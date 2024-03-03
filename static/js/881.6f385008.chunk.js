@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpolina_design=self.webpackChunkpolina_design||[]).push([[881],{881:(e,a,s)=>{e.exports=s.p+"static/media/logo-lg.fa39aa2ceaab58e30e45.svg"}}]);

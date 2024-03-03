@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpolina_design=self.webpackChunkpolina_design||[]).push([[1203],{1203:(e,s,a)=>{e.exports=a.p+"static/media/curved-arrow.07b90465749e88e54d46.svg"}}]);

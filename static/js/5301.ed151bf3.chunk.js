@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpolina_design=self.webpackChunkpolina_design||[]).push([[5301],{5301:(e,s,a)=>{e.exports=a.p+"static/media/transform-arrow.0036e6d42b4a2f8d8efe.svg"}}]);

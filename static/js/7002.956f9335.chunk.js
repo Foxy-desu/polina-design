@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpolina_design=self.webpackChunkpolina_design||[]).push([[7002],{7002:(e,s,n)=>{e.exports=n.p+"static/media/phone-frame-designed.6998fd40bde21765059a.png"}}]);

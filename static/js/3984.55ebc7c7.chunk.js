@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpolina_design=self.webpackChunkpolina_design||[]).push([[3984],{3984:(a,e,s)=>{a.exports=s.p+"static/media/advantages-logo-decoration.c9417a2832cbd5d73412.png"}}]);

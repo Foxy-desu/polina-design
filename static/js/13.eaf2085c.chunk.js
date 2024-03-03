@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpolina_design=self.webpackChunkpolina_design||[]).push([[13],{13:(s,e,i)=>{s.exports=i.p+"static/media/socials-instagram-ico.ed21bbf60f00c575bfc8.svg"}}]);

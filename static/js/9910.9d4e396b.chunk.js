@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpolina_design=self.webpackChunkpolina_design||[]).push([[9910],{9910:(e,s,a)=>{e.exports=a.p+"static/media/atmosphere-plain-sm-3.cb03c64aefc363600adc.png"}}]);

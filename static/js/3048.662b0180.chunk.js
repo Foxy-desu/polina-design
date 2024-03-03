@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpolina_design=self.webpackChunkpolina_design||[]).push([[3048],{3048:(e,s,i)=>{e.exports=i.p+"static/media/hero-img.0dcda042271e3e736cf4.svg"}}]);

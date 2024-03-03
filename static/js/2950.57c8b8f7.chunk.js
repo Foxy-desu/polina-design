@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpolina_design=self.webpackChunkpolina_design||[]).push([[2950],{2950:(e,s,n)=>{e.exports=n.p+"static/media/designed-phone-container-1.40c9fef5e0b89fa01ca5.svg"}}]);

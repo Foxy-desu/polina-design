@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpolina_design=self.webpackChunkpolina_design||[]).push([[9683],{9683:(e,s,a)=>{e.exports=a.p+"static/media/designed-card-1.2fe44b4aabb55f804f94.png"}}]);

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpolina_design=self.webpackChunkpolina_design||[]).push([[8168],{8168:(e,a,s)=>{e.exports=s.p+"static/media/sad-face-emoji.8853b83854a6ea0deea2.svg"}}]);

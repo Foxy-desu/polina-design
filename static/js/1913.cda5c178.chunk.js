@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpolina_design=self.webpackChunkpolina_design||[]).push([[1913],{1913:(e,a,s)=>{e.exports=s.p+"static/media/intro-bg.c4b9fae63deaba55343b.png"}}]);

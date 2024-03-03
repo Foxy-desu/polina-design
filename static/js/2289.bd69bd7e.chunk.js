@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpolina_design=self.webpackChunkpolina_design||[]).push([[2289],{2289:(e,i,s)=>{e.exports=s.p+"static/media/vibe-block-decoration.4771c51ed1c4b02d0111.png"}}]);

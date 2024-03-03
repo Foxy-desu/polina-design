@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpolina_design=self.webpackChunkpolina_design||[]).push([[3096],{3096:(e,i,s)=>{e.exports=s.p+"static/media/pricing-line-bg.6726e13b8ccc33312726.svg"}}]);

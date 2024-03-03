@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpolina_design=self.webpackChunkpolina_design||[]).push([[2439],{2439:(e,s,a)=>{e.exports=a.p+"static/media/line.093bf4a3ab617c77fb12.svg"}}]);
