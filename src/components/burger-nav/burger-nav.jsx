@@ -4,9 +4,8 @@ import {BurgerButton} from "../UI/burger-button/burger-button";
 import {NavigationBar} from "../navigation-bar/navigation-bar";
 import {SocialList} from "../UI/social-list/social-list";
 
-export const BurgerNav =({anchorsData, socialData, setPos= false})=> {
+export const BurgerNav =({anchorsData, socialData, setPos= false, visibleSections})=> {
     const [click, setClick] = useState("open");
-
     const setClickWrap = useCallback((val)=> setClick(val), [setClick]);
 
     useEffect(()=> {
@@ -31,7 +30,7 @@ export const BurgerNav =({anchorsData, socialData, setPos= false})=> {
                     ? styles["navigation__menu"]
                     : `${styles["navigation__menu"]} ${styles["navigation__menu_active"]}`
             }>
-                <NavigationBar anchorsData={anchorsData} clickHandler={clickHandler}/>
+                <NavigationBar anchorsData={anchorsData} clickHandler={clickHandler} visibleSections={visibleSections}/>
                 <div className={styles["navigation__socials"]}>
                     <SocialList socialData={socialData}  clickHandler={clickHandler}/>
                 </div>

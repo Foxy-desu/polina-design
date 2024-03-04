@@ -7,7 +7,7 @@ import styles from "../../components/page-layout/page-layout.module.scss";
 import {Image} from "../../components/image/image";
 import {Intro} from "../../components/intro/intro";
 
-export const MainScreen = ({advantages, prices, portfolio, atmosphere, intro}) => {
+export const MainScreen = ({advantages, prices, portfolio, atmosphere, intro, visibleSections, setVisibleSections}) => {
 
     return (
         <>
@@ -24,9 +24,9 @@ export const MainScreen = ({advantages, prices, portfolio, atmosphere, intro}) =
                 </div>
             </header>
             <main className="main">
-                <AdvantagesSec advantagesData={advantages}/>
-                <PricesSection pricesData={prices}/>
-                <PortfolioSection portfolioData={portfolio}/>
+                <AdvantagesSec advantagesData={advantages} visibleSections={visibleSections} setVisibleSections={setVisibleSections}/>
+                <PricesSection pricesData={prices} visibleSections={visibleSections} setVisibleSections={setVisibleSections}/>
+                <PortfolioSection portfolioData={portfolio} visibleSections={visibleSections} setVisibleSections={setVisibleSections}/>
                 <AtmosphereSection atmosphereData={atmosphere}/>
             </main>
         </>

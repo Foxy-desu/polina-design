@@ -5,7 +5,7 @@ import styles from "./navigation-bar.module.scss";
 import { NavigationIco } from "./navigation-ico/navigation-ico";
 
 
-const AnchorGroup = ({anchors, clickHandler}) => {
+const AnchorGroup = ({anchors, clickHandler, visibleSections}) => {
     const [clickedId, setClickedId] = useState(-1);
 
     return (
@@ -24,7 +24,7 @@ const AnchorGroup = ({anchors, clickHandler}) => {
             }
             return (
                 <li className={styles["nav-bar__list-item"]} key={id}>
-                    <Anchor id={i} clickedId={clickedId} sectionId={sectionId} content={anchorContent} setClickedId={setClickedId} clickHandler={clickHandler}/>
+                    <Anchor id={i} clickedId={clickedId} sectionId={sectionId} content={anchorContent} setClickedId={setClickedId} clickHandler={clickHandler} visibleSections={visibleSections}/>
                 </li>
             )
         })}
@@ -32,11 +32,11 @@ const AnchorGroup = ({anchors, clickHandler}) => {
     )
 }
 
-export const NavigationBar = ({anchorsData, clickHandler}) => {
+export const NavigationBar = ({anchorsData, clickHandler, visibleSections}) => {
 
     return <nav className={styles["nav-bar"]}>
         <ul className={styles["nav-bar__list"]}>
-            <AnchorGroup anchors={anchorsData} clickHandler={clickHandler}/>
+            <AnchorGroup anchors={anchorsData} clickHandler={clickHandler} visibleSections={visibleSections}/>
         </ul>
     </nav>
 };

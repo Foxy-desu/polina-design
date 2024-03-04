@@ -29,6 +29,11 @@ const PageLayout = ({data}) => {
     const setPosWrap = useCallback((val)=> {
         setPos(val);
     }, [setPos])
+    const [visibleSections, setVisibleSections] = useState([]);
+
+    useEffect(()=> {
+        // console.log(visibleSections);
+    }, [visibleSections]);
 
     useEffect(() => {
         const handleWindowResize = () => {
@@ -53,8 +58,8 @@ const PageLayout = ({data}) => {
                     : `${styles["page-layout__aside"]} ${styles["nav-wrap_close"]}`
                 }>
                 {block === "navbar"
-                    ? <NavigationBar anchorsData={navigation}/>
-                    : <BurgerNav anchorsData={navigation} socialData={socials} setPos={setPosWrap}></BurgerNav>
+                    ? <NavigationBar anchorsData={navigation} visibleSections={visibleSections}/>
+                    : <BurgerNav anchorsData={navigation} socialData={socials} setPos={setPosWrap} visibleSections={visibleSections}></BurgerNav>
                 }
             </aside>
                 <div className={styles["page-layout__content"]}>
@@ -66,6 +71,8 @@ const PageLayout = ({data}) => {
                                     prices={prices}
                                     portfolio={portfolio}
                                     atmosphere={atmosphere}
+                                    visibleSections={visibleSections}
+                                    setVisibleSections={setVisibleSections}
                                 />
                             }/>
                             <Route path={"/all-prices"} element={
