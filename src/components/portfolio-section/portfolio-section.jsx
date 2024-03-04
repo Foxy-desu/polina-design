@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, {useEffect, useRef, useState} from "react";
 import { SectionHeader } from "../UI/section-header/section-header";
 import { PhotoFrame } from "../UI/photo-frame/photo-frame";
 import { Button } from "../UI/button/button";
@@ -34,10 +34,10 @@ const ShowMoreBtn = ({isMinimized, setMinimized}) => {
         </div>
     )
 };
-
 const Card = ({card, isMinimized})=> {
     const block = React.createRef();
     const [showClass, setShowClass] = useState("");
+    const viewportWidth = window.innerWidth;
 
 
     useEffect(() => {
@@ -63,7 +63,7 @@ const Card = ({card, isMinimized})=> {
             window.removeEventListener('scroll', checkBlocksVisibility)
         }
 
-    }, [showClass]);
+    });
 
     return (
         <div ref={block} key={card.id} className={
@@ -74,8 +74,9 @@ const Card = ({card, isMinimized})=> {
             <PhotoFrame info={card.info} path={card.path}/>
         </div>
     )
-}
-export const PortfolioSection = ({portfolioData}) => {
+};
+
+export const PortfolioSection = ({portfolioData, setVisibleSections, visibleSections}) => {
     const heading = portfolioData.sectionHeading;
     const cards = portfolioData.portfolioCards;
     const btns = portfolioData.buttons;
@@ -83,10 +84,12 @@ export const PortfolioSection = ({portfolioData}) => {
 
     const [width, setWidth] = useState(() => {
         return window.innerWidth
-    })
+    });
     const [isMinimized, setMinimized] = useState(()=> {
         return width <= breakpoint ? true : false;
-    })
+    });
+    const [isVisible, setIsVisible] = useState(false);
+    const section = useRef(null);
 
     useEffect(() => {
         const windowResizeHandler = () => {
@@ -101,7 +104,45 @@ export const PortfolioSection = ({portfolioData}) => {
     useEffect(()=> {
         if(width <= breakpoint) setMinimized(true);
         else setMinimized(false);
-    }, [width])
+    }, [width]);
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                setIsVisible(entry.isIntersecting);
+            },
+            {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1,
+            });
+
+        if (section.current) {
+            observer.observe(section.current);
+        }
+
+        return()=> {
+            if (section.current) {
+                observer.unobserve(section.current);
+            }
+        }
+
+    }, []);
+
+    useEffect(()=> {
+        const key = section.current.id;
+        const index = visibleSections.indexOf(key);
+        if(isVisible) {
+            if(index === -1) {
+                setVisibleSections([...visibleSections, key])
+            }
+        }if(!isVisible){
+            if(index > -1) {
+                setVisibleSections(visibleSections.filter((elem)=> {
+                    return elem !== key;
+                }));
+            }
+        }
+    }, [isVisible]);
 
     function renderCards(cards) {
 
@@ -109,7 +150,6 @@ export const PortfolioSection = ({portfolioData}) => {
             return <Card card={card} isMinimized={isMinimized}/>
         })
     }
-
     function renderButtons(buttons) {
 
         return buttons.map((button)=> {
@@ -120,7 +160,7 @@ export const PortfolioSection = ({portfolioData}) => {
     };
 
     return (
-        <section className={styles["portfolio"]} id="portfolio">
+        <section className={styles["portfolio"]} id="portfolio" ref={section}>
             <div className={styles["content-wrap"]}>
                 <div className={styles["portfolio__header"]}>
                     <SectionHeader content={heading.content} type={heading.type}/>

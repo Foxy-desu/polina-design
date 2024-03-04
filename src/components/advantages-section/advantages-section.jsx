@@ -1,11 +1,51 @@
-import React from "react";
+import React, {useEffect, useState, useRef} from "react";
 import styles from "./advantages-section.module.scss";
 import { SectionHeader } from "../UI/section-header/section-header";
 import { InformationBlock } from "../UI/information-block/information-block";
 
-export const AdvantagesSec = ({advantagesData}) => {
+export const AdvantagesSec = ({advantagesData, visibleSections, setVisibleSections}) => {
     const header = advantagesData.sectionHeading;
     const advantages = advantagesData.advantages;
+    const [isVisible, setIsVisible] = useState(false);
+    const section = useRef(null);
+
+    useEffect(()=> {
+        const observer = new IntersectionObserver(
+            ([entry])=> {
+                setIsVisible(entry.isIntersecting);
+            },
+            {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1,
+            }
+        );
+
+        if(section.current) {
+            observer.observe(section.current);
+        }
+
+        return ()=> {
+            if(section.current) {
+                observer.unobserve(section.current);
+            }
+        };
+    }, []);
+    useEffect(()=> {
+        const key = section.current.id;
+        const index = visibleSections.indexOf(key);
+        if(isVisible) {
+            if(index === -1) {
+                setVisibleSections([...visibleSections, key])
+            }
+        }if(!isVisible){
+            if(index > -1) {
+                setVisibleSections(visibleSections.filter((elem)=> {
+                    return elem !== key;
+                }));
+            }
+        }
+    }, [isVisible]);
 
     function renderAdvantages(advantages) {
         return (
@@ -20,7 +60,7 @@ export const AdvantagesSec = ({advantagesData}) => {
     }
 
     return (
-    <section className={styles["advantages"]} id="advantages">
+    <section className={styles["advantages"]} id="advantages" ref={section}>
         <div className={styles["gradient"]}></div>
         <div className={styles["content-wrap"]}>
             <div className={styles["advantages__header"]}>
