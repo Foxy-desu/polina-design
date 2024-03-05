@@ -1,12 +1,16 @@
-import React from "react";
+import React, {useEffect} from "react";
 import { useState } from "react";
 import { Anchor } from "../UI/anchor/anchor";
 import styles from "./navigation-bar.module.scss";
 import { NavigationIco } from "./navigation-ico/navigation-ico";
 
 
-const AnchorGroup = ({anchors, clickHandler, visibleSections}) => {
+const AnchorGroup = ({anchors, clickHandler, visibleSections, setVisibleSections, forceUpdate}) => {
     const [clickedId, setClickedId] = useState(-1);
+
+    useEffect(() => {
+        if (forceUpdate) setVisibleSections([]);
+    }, [forceUpdate]);
 
     return (
         <>
@@ -24,7 +28,7 @@ const AnchorGroup = ({anchors, clickHandler, visibleSections}) => {
             }
             return (
                 <li className={styles["nav-bar__list-item"]} key={id}>
-                    <Anchor id={i} clickedId={clickedId} sectionId={sectionId} content={anchorContent} setClickedId={setClickedId} clickHandler={clickHandler} visibleSections={visibleSections}/>
+                    <Anchor id={i} clickedId={clickedId} sectionId={sectionId} content={anchorContent} setClickedId={setClickedId} clickHandler={clickHandler} visibleSections={visibleSections} setVisibleSections={setVisibleSections} forceUpdate={forceUpdate}/>
                 </li>
             )
         })}
@@ -32,11 +36,11 @@ const AnchorGroup = ({anchors, clickHandler, visibleSections}) => {
     )
 }
 
-export const NavigationBar = ({anchorsData, clickHandler, visibleSections}) => {
+export const NavigationBar = ({anchorsData, clickHandler, visibleSections, setVisibleSections, forceUpdate}) => {
 
     return <nav className={styles["nav-bar"]}>
         <ul className={styles["nav-bar__list"]}>
-            <AnchorGroup anchors={anchorsData} clickHandler={clickHandler} visibleSections={visibleSections}/>
+            <AnchorGroup anchors={anchorsData} clickHandler={clickHandler} visibleSections={visibleSections} setVisibleSections={setVisibleSections} forceUpdate={forceUpdate}/>
         </ul>
     </nav>
 };
