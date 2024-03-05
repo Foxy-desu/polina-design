@@ -1,9 +1,13 @@
-import React from "react";
+import React, {useEffect} from "react";
 import styles from "./order-screen.module.scss";
 import {SectionHeader} from "../../components/UI/section-header/section-header";
 import {OrderForm} from "../../components/order-form/order-form";
 
-export const OrderScreen = ({orderData}) => {
+export const OrderScreen = ({orderData, setForceUpdate}) => {
+
+  useEffect(() => {
+    setForceUpdate('order-screen');
+  });
 
     return (
         <section className={styles["order"]} id="order">

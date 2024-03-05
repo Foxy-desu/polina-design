@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import {AdvantagesSec} from "../../components/advantages-section/advantages-section";
 import {PricesSection} from "../../components/prices-section/prices-section";
 import {PortfolioSection} from "../../components/portfolio-section/portfolio-section";
@@ -7,7 +7,14 @@ import styles from "../../components/page-layout/page-layout.module.scss";
 import {Image} from "../../components/image/image";
 import {Intro} from "../../components/intro/intro";
 
-export const MainScreen = ({advantages, prices, portfolio, atmosphere, intro, visibleSections, setVisibleSections}) => {
+export const MainScreen = ({advantages, prices, portfolio, atmosphere, intro, visibleSections, setVisibleSections, setForceUpdate}) => {
+
+    useEffect(() => {
+        setForceUpdate(false)
+        return ()=> {
+            setForceUpdate(true);
+        }
+    }, []);
 
     return (
         <>

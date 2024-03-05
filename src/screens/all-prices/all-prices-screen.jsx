@@ -1,9 +1,13 @@
-import React from "react";
+import React, {useEffect} from "react";
 import styles from "./all-prices.module.scss";
 import {SectionHeader} from "../../components/UI/section-header/section-header";
 import {Button} from "../../components/UI/button/button";
 
-export const AllPricesScreen = ({allPricesData}) => {
+export const AllPricesScreen = ({allPricesData, setForceUpdate}) => {
+
+    useEffect(() => {
+        setForceUpdate('prices-screen');
+    });
 
     function renderPrices(plans) {
         return plans.map((plan)=> {
