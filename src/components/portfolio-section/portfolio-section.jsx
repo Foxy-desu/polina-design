@@ -113,7 +113,7 @@ export const PortfolioSection = ({portfolioData, setVisibleSections, visibleSect
             {
                 root: null,
                 rootMargin: '0px',
-                threshold: 0.1,
+                threshold: 0.35,
             });
 
         if (section.current) {

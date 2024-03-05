@@ -31,7 +31,7 @@ export const PricesSection = ({pricesData, blockType, setVisibleSections, visibl
             {
                 root: null,
                 rootMargin: '0px',
-                threshold: 0.1,
+                threshold: 0.7,
             }
         );
 
