@@ -30,10 +30,11 @@ const PageLayout = ({data}) => {
         setPos(val);
     }, [setPos])
     const [visibleSections, setVisibleSections] = useState([]);
+    const [forceUpdate, setForceUpdate] = useState(false);
 
-    useEffect(()=> {
-        // console.log(visibleSections);
-    }, [visibleSections]);
+    // useEffect(()=> {
+    //     console.log('forceUpdate',forceUpdate);
+    // }, [forceUpdate]);
 
     useEffect(() => {
         const handleWindowResize = () => {
@@ -58,8 +59,8 @@ const PageLayout = ({data}) => {
                     : `${styles["page-layout__aside"]} ${styles["nav-wrap_close"]}`
                 }>
                 {block === "navbar"
-                    ? <NavigationBar anchorsData={navigation} visibleSections={visibleSections}/>
-                    : <BurgerNav anchorsData={navigation} socialData={socials} setPos={setPosWrap} visibleSections={visibleSections}></BurgerNav>
+                    ? <NavigationBar anchorsData={navigation} visibleSections={visibleSections} setVisibleSections={setVisibleSections} forceUpdate={forceUpdate}/>
+                    : <BurgerNav anchorsData={navigation} socialData={socials} setPos={setPosWrap} visibleSections={visibleSections} setVisibleSections={setVisibleSections} forceUpdate={forceUpdate}/>
                 }
             </aside>
                 <div className={styles["page-layout__content"]}>
@@ -73,13 +74,14 @@ const PageLayout = ({data}) => {
                                     atmosphere={atmosphere}
                                     visibleSections={visibleSections}
                                     setVisibleSections={setVisibleSections}
+                                    setForceUpdate={setForceUpdate}
                                 />
                             }/>
                             <Route path={"/all-prices"} element={
-                                <AllPricesScreen allPricesData={prices}/>
+                                <AllPricesScreen allPricesData={prices} setForceUpdate={setForceUpdate}/>
                             }/>
                             <Route path={"/order"} element={
-                                <OrderScreen orderData={prices}/>
+                                <OrderScreen orderData={prices} setForceUpdate={setForceUpdate}/>
                             }/>
                         </Routes>
                     <Footer footerData={footer}/>
