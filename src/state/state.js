@@ -17,18 +17,18 @@ const state = {
             },
             {
                 id: "navLink3",
-                content: "портфолио",
-                sectionId: "portfolio",
+                content: "стоимость",
+                sectionId: "prices",
                 type: "anchor",
                 icoPath: ""
             },
             {
                 id: "navLink4",
-                content: "стоимость",
-                sectionId: "prices",
+                content: "портфолио",
+                sectionId: "portfolio",
                 type: "anchor",
                 icoPath: ""
-            }
+            },
         ]
     },
     socials: [
