@@ -2,12 +2,8 @@ import {useEffect, useState} from 'react';
 import {HashLink as Link} from "react-router-hash-link";
 import styles from './anchor.module.scss';
 
-const Anchor = ({sectionId, content, id, clickedId, setClickedId, clickHandler, visibleSections}) => {
-
-const [isVisible, setIsVisible] = useState(()=> {
-    if(visibleSections.includes(sectionId)) return true;
-    return false
-})
+const Anchor = ({sectionId, content, id, clickedId, setClickedId, clickHandler, visibleSections, forceUpdate}) => {
+const [isVisible, setIsVisible] = useState(false);
 
     useEffect(()=> {
         const section = sectionId;
@@ -21,7 +17,7 @@ const [isVisible, setIsVisible] = useState(()=> {
         if (clickHandler) clickHandler();
         else return;
     }
-    return <div className={`${isVisible===true && clickedId === id? styles["anchor"] + ' ' + styles["anchor_active"] : styles["anchor"]}`} onClick={()=> {
+    return <div className={`${isVisible===true? styles["anchor"] + ' ' + styles["anchor_active"] : styles["anchor"]}`} onClick={()=> {
         setClickedId(id);
         handleCheck();
     }}>
