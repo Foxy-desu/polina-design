@@ -34,7 +34,7 @@ const ShowMoreBtn = ({isMinimized, setMinimized}) => {
         </div>
     )
 };
-const Card = ({card, isMinimized})=> {
+const Card = ({card, isMinimized, firstCard=false})=> {
     const block = React.createRef();
     const [showClass, setShowClass] = useState("");
     const viewportWidth = window.innerWidth;
@@ -43,11 +43,19 @@ const Card = ({card, isMinimized})=> {
     useEffect(() => {
         function checkBlocksVisibility() {
             const target = block.current;
-            if (target) {
+            if (target && !isMinimized) {
                 let windowHeight = window.innerHeight;
                 let blockPos = target.getBoundingClientRect().top;
-
-                if(blockPos < windowHeight - 200) {
+                if(blockPos < windowHeight - 100) {
+                    setShowClass("portfolio__card-wrap_show");
+                } else {
+                   setShowClass("");
+                }
+            }
+            if (target && isMinimized && firstCard) {
+                let windowHeight = window.innerHeight;
+                let blockPos = target.getBoundingClientRect().top;
+                if(blockPos < windowHeight - 100) {
                     setShowClass("portfolio__card-wrap_show");
                 } else {
                     setShowClass("");
@@ -60,7 +68,8 @@ const Card = ({card, isMinimized})=> {
         window.addEventListener('scroll', checkBlocksVisibility);
 
         return ()=> {
-            window.removeEventListener('scroll', checkBlocksVisibility)
+            window.removeEventListener('scroll', checkBlocksVisibility);
+            block.current = null;
         }
 
     });
@@ -146,7 +155,10 @@ export const PortfolioSection = ({portfolioData, setVisibleSections, visibleSect
 
     function renderCards(cards) {
 
-        return cards.map((card)=> {
+        return cards.map((card, i)=> {
+            if (i === 0) {
+                return <Card card={card} isMinimized={isMinimized} firstCard={true}/>
+            }
             return <Card card={card} isMinimized={isMinimized}/>
         })
     }
