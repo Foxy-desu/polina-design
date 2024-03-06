@@ -5,6 +5,7 @@
     @include centerredContentVH($cross: center, $main: center, $direction: column, $gap: 0px);
     position: relative;
 }
+
 .gradient {
     z-index: -1;
     position: absolute;
@@ -19,7 +20,6 @@
 }
 
 .content-wrap {
-    //max-width: 920px;
     padding: 0 46px;
     max-width: 920px;
     background: url(../../assets/images/advantages-logo-decoration.png) no-repeat center bottom;
@@ -30,7 +30,6 @@
     @media screen and (max-width: 1316px) {
         padding: 0 4%;
     }
-    
 }
 
 .advantages__list {
@@ -45,9 +44,7 @@
     transition: 0.2s ease;
 
     @media screen and (max-width: $sw-breakPoint-5){
-        //column-gap: 20%;
         row-gap: 13%;
         margin-bottom: 34%;
     }
-
 }

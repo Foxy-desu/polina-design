@@ -10,6 +10,7 @@
   height: 30px;
   max-width: 200px;
 }
+
 .form {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -81,10 +82,6 @@
   max-width: 200px;
 }
 
-.options-list__option {
-
-}
-
 .accent {
   background-color: $clr-primary;
   font-size: max(15px, $fs-tny);
@@ -107,6 +104,7 @@
 
 .perks__list-item {
   font-size: max(14px, $fs-tny);
+
   &:before {
     content: "";
     display: inline-block;
@@ -120,7 +118,6 @@
 
 .phone-input__input {
   margin-top: 2%;
-
   padding-left: 3%;
   width: 100%;
   height: 35px;

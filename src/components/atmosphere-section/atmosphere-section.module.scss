@@ -45,7 +45,6 @@
     width: 100%;
     align-self: flex-start;
     padding-right: 17px;
-    max-width: 530px;
     gap: 2cqw;
     max-width: 547px;
 
@@ -85,10 +84,6 @@
     }
 }
 
-.outstand-block__plain-cards {
-    
-}
-
 .plain-cards__images {
     @include centerredContentVH($cross: flex-start, $main: flex-start, $direction: row, $gap: 20px);
 
@@ -106,10 +101,10 @@
     transform: translate(-84px, -80px);
     transition: 0.2s ease;
 
-
     @media  screen and (max-width: 1184px) {
         transform: translate(-9cqw, -8%);
     }
+
     @media  screen and (max-width:  840px) {
         transform: translate(-2cqw, 8%);
     }
@@ -121,13 +116,10 @@
     display: flex;
     justify-content: center;
     gap: 2cqw;
-    //flex-wrap: wrap;
     padding-right: 11px;
 
     @media screen and (max-width: 326px) {
-
         justify-content: center;
-
     }
 
     .card-wrap {
@@ -155,9 +147,6 @@
             }
         }
     }
-
-
-
 }
 
 .plain-cards__desc-wrap {
@@ -191,6 +180,7 @@
 
     @media  screen and (max-width: 1184px) {
         @include cardSizeCQW($plain-card-w, 0.5793);
+
         &.designed-card-wrap {
             @include cardSizeCQW($designed-card-w, 0.5793);
         }

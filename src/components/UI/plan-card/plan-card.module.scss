@@ -23,7 +23,7 @@
     }
 
     &_glowing {
-        box-shadow: 0px 0px 100px 0px rgb(133, 255, 90);
+        box-shadow: 0 0 100px 0 rgb(133, 255, 90);
     }
 
     &:nth-child(1) {
@@ -41,14 +41,12 @@
 
 .plan-card__card-header {
     margin-bottom: 16%;
-
 }
 
 .plan-card__card-content {
     @include centerredContentVH($cross: center, $main: space-between, $direction: column, $gap: 0px);
     flex-grow: 1;
     margin-bottom: 8%;
-
 }
 
 .plan-card__card-btn {
@@ -58,5 +56,5 @@
 }
 
 .slight-shadow {
-    box-shadow: 0px 0px 18px 0px rgb(133, 255, 90);
+    box-shadow: 0 0 18px 0 rgb(133, 255, 90);
 }

@@ -10,7 +10,6 @@ $block-height: 43px;
     height: $block-height;
     background-color: $clr-base;
     border: 1px solid $clr-ltr;
-    // padding-bottom: 2.5px;
     font-weight: $fw-med;
     line-height: 100%;
 
@@ -18,7 +17,6 @@ $block-height: 43px;
         &:hover {
             border: 1px solid $clr-secondary;
         }
-
     }
     
     &_active {
@@ -60,12 +58,8 @@ $block-height: 43px;
                 outline: none;
                 color: $clr-base-dk;
             }
-
         }
-
-       
     }
-
 }
 
 .anchor__link {
@@ -81,7 +75,6 @@ $block-height: 43px;
         &:hover {
             color: $clr-secondary;
             text-shadow: 2px 1px 13px rgb(255, 0, 255);
-
         }
     }
 
@@ -90,5 +83,4 @@ $block-height: 43px;
         color: $clr-secondary;
         border: 1px solid;
     }
-
 }

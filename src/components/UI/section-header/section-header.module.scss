@@ -3,14 +3,12 @@
 
 .section-header {
     @include centerredContentVH(center, flex-start);
-
     position: relative;
     width: 100%;
     height: auto;
     overflow: hidden;
 
     &__text {
-        
         color: $clr-secondary-ltr;
         font-weight: $fw-thkst;
         font-size: max(35px, $fs-lgst);

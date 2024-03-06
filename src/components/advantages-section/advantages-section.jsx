@@ -1,75 +1,47 @@
-import React, {useEffect, useState, useRef} from "react";
+import React, { useEffect, useState, useRef } from "react";
 import styles from "./advantages-section.module.scss";
 import { SectionHeader } from "../UI/section-header/section-header";
 import { InformationBlock } from "../UI/information-block/information-block";
+import { useIntersectionObserver } from "../../custom-hooks/use-intersection-observer";
+import { useVisibleSections } from "../../custom-hooks/use-visible-sections";
 
-export const AdvantagesSec = ({advantagesData, visibleSections, setVisibleSections}) => {
-    const header = advantagesData.sectionHeading;
-    const advantages = advantagesData.advantages;
-    const [isVisible, setIsVisible] = useState(false);
-    const section = useRef(null);
+export const AdvantagesSec = ({
+  advantagesData,
+  visibleSections,
+  setVisibleSections,
+}) => {
+  const header = advantagesData.sectionHeading;
+  const advantages = advantagesData.advantages;
+  const [isVisible, setIsVisible] = useState(false);
+  const section = useRef(null);
 
-    useEffect(()=> {
-        const observer = new IntersectionObserver(
-            ([entry])=> {
-                setIsVisible(entry.isIntersecting);
-            },
-            {
-                root: null,
-                rootMargin: '0px',
-                threshold: 0.7,
-            }
-        );
+  useIntersectionObserver(section, setIsVisible, 1);
+  useVisibleSections(section, visibleSections, isVisible, setVisibleSections);
+  function renderAdvantages(advantages) {
+    return advantages.map((advantage) => {
+      return (
+        <li key={advantage.id} className="advantages__list-item">
+          <InformationBlock
+            heading={advantage.heading}
+            description={advantage.description}
+            descType={advantage.descType}
+          />
+        </li>
+      );
+    });
+  }
 
-        if(section.current) {
-            observer.observe(section.current);
-        }
-
-        return ()=> {
-            if(section.current) {
-                observer.unobserve(section.current);
-            }
-        };
-    }, []);
-    useEffect(()=> {
-        const key = section.current.id;
-        const index = visibleSections.indexOf(key);
-        if(isVisible) {
-            if(index === -1) {
-                setVisibleSections([...visibleSections, key])
-            }
-        }if(!isVisible){
-            if(index > -1) {
-                setVisibleSections(visibleSections.filter((elem)=> {
-                    return elem !== key;
-                }));
-            }
-        }
-    }, [isVisible]);
-
-    function renderAdvantages(advantages) {
-        return (
-            advantages.map((advantage)=> {
-                return (
-                    <li key={advantage.id} className="advantages__list-item">
-                        <InformationBlock heading={advantage.heading} description={advantage.description} descType={advantage.descType}/>
-                    </li>
-                )
-            })
-        )
-    }
-
-    return (
+  return (
     <section className={styles["advantages"]} id="advantages" ref={section}>
-        <div className={styles["gradient"]}></div>
-        <div className={styles["content-wrap"]}>
-            <div className={styles["advantages__header"]}>
-                <SectionHeader content={header.content} type={header.type}/>
-            </div> 
-            <ul className={styles["advantages__list"]}>
-                {renderAdvantages(advantages)}
-            </ul>
+      <div className={styles["gradient"]}></div>
+      <div className={styles["content-wrap"]}>
+        <div className={styles["advantages__header"]}>
+          <SectionHeader content={header.content} type={header.type} />
         </div>
-    </section >
-    )
-}
+        <ul className={styles["advantages__list"]}>
+          {renderAdvantages(advantages)}
+        </ul>
+      </div>
+    </section>
+  );
+};

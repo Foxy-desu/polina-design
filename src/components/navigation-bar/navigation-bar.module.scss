@@ -1,7 +1,6 @@
 @import "../../styles/abstracts/mixins";
 @import "../../styles/abstracts/variables";
 
-
 .nav-bar {
     @include centerredContentVH($cross: center, $main: flex-start, $direction: column, $gap: 61px);
 
@@ -25,6 +24,5 @@
         @media screen and (max-width: $sw-max) {
             margin-bottom: 11%;
         }
-
     }
 }

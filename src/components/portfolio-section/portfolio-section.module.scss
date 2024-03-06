@@ -46,7 +46,6 @@
     @media screen and (max-width: 629px) {
         margin-bottom: 13%;
     }
-
 }
 
 .portfolio__card-wrap {
@@ -58,7 +57,6 @@
     opacity: 0;
     transform: translateY(15px);
     transition: transform 0.9s, opacity 0.9s;
-
 
     &:nth-child(2n) {
         transform: translateY(110px);
@@ -76,8 +74,6 @@
         &:last-child {
             display: none;
         }
-
-
     }
 
     @media screen and (max-width: 629px) {
@@ -124,9 +120,8 @@
         &:last-child {
             display: none;
         }
-
-
     }
+
     @media screen and (max-width: 629px) {
         &:nth-child(3n + 2) {
             transform: translateY(0);
@@ -141,14 +136,6 @@
         width: 250px;
         height: 427px;
     }
-
-    //&_minimized {
-    //    @media screen and (max-width: 415px) {
-    //        &:nth-child(n + 2) {
-    //            display: none;
-    //        }
-    //    }
-    //}
 }
 
 .portfolio__btns {

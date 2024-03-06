@@ -18,13 +18,11 @@
 .nav-bar__list {
 
     &-item:first-child {
-
         margin-bottom: calc(61px - 17px);
 
         @media screen and (max-width: $sw-max) {
-            margin-bottom: 0px;
+            margin-bottom: 0;
             margin-right: 19px;
-            
         }
     }
 }
