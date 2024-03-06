@@ -7,6 +7,7 @@ export const SocialList = ({ socialData, clickHandler }) => {
     return socialData.map((social) => {
       return (
         <SocialItem
+          key={social.id}
           link={social.link}
           name={social.name}
           iconPath={social.iconPath}

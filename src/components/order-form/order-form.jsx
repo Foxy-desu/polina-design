@@ -25,7 +25,7 @@ const ItemPicker = ({ options, setSelectText, selectText }) => {
 
   function renderOptions(options) {
     return options.map((option) => {
-      return <Option option={option} />;
+      return <Option key={option.id} option={option} />;
     });
   }
 
@@ -70,9 +70,9 @@ const ItemDesc = ({ selectText, options }) => {
       })[0];
 
       function renderPerks(perks) {
-        return perks.map((perk) => {
+        return perks.map((perk, i) => {
           return (
-            <li className={style["perks__list-item"]} key={perk.id}>
+            <li key={`perk${i}`} className={style["perks__list-item"]}>
               {perk}
             </li>
           );

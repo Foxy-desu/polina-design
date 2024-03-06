@@ -129,9 +129,9 @@ export const PortfolioSection = ({
   function renderCards(cards) {
     return cards.map((card, i) => {
       if (i === 0) {
-        return <Card card={card} isMinimized={isMinimized} firstCard={true} />;
+        return <Card key={card.id} card={card} isMinimized={isMinimized} firstCard={true} />;
       }
-      return <Card card={card} isMinimized={isMinimized} />;
+      return <Card key={card.id} card={card} isMinimized={isMinimized} />;
     });
   }
   function renderButtons(buttons) {

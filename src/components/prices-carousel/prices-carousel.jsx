@@ -9,8 +9,8 @@ export const PricesCarousel = ({ plans }) => {
   function renderSwipes(plans) {
     return plans.map((plan, i) => {
       return (
-        <SwiperSlide>
-          <div key={plan.id} className={styles["plan-wrap"]}>
+        <SwiperSlide key={plan.id}>
+          <div className={styles["plan-wrap"]}>
             <PlanCard
               planName={plan.planName}
               perks={plan.perks}
