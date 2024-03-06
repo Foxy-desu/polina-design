@@ -12,6 +12,7 @@
 html {
     scroll-behavior: smooth;
     scroll-padding-top: 50px;
+    overflow-x: hidden;
     @media screen and (max-width: 840px) {
         font-size: 1.9vw;
     }
@@ -19,7 +20,7 @@ html {
 
 body {
     background-color: rgb(66, 1, 206);
-    overflow-x: hidden;
+    /*overflow-x: hidden;*/
     
 }
 
