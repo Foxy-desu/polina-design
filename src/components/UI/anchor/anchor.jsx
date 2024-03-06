@@ -12,7 +12,8 @@ export const Anchor = ({
 
   useEffect(() => {
     const section = sectionId;
-    if (visibleSections.includes(section)) {
+    if (visibleSections[visibleSections.length-1] === section) {
+    // if (visibleSections.includes(section)) { -not good enough for burger menu
       setIsVisible(true);
     } else
       setTimeout(() => {
