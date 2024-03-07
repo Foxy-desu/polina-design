@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkpolina_design=self.webpackChunkpolina_design||[]).push([[1900],{1900:(e,a,s)=>{e.exports=s.p+"static/media/advantages-color-layer.b82e9f5b90f945ee164a.svg"}}]);

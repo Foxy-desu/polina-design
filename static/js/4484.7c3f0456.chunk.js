@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkpolina_design=self.webpackChunkpolina_design||[]).push([[4484],{4484:(s,a,e)=>{s.exports=e.p+"static/media/design-transformation-bg.4d818dfab5dfa85ccba0.svg"}}]);

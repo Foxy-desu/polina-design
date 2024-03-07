@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkpolina_design=self.webpackChunkpolina_design||[]).push([[6057],{6057:(s,a,e)=>{s.exports=e.p+"static/media/stars-layer-v1.7a64736a660b697a56f3.svg"}}]);

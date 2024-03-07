@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkpolina_design=self.webpackChunkpolina_design||[]).push([[3486],{3486:(e,n,s)=>{e.exports=s.p+"static/media/plain-phone-container-1.a0399e1bc78b23bf0294.svg"}}]);
