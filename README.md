@@ -1,6 +1,6 @@
 # Polina Design
 
-Одностраничное [web-приложение](https://foxy-desu.github.io/polina-design/), выполненное по [макету в Figma](https://www.figma.com/file/JH09ZNOStHlEJs9RI9iGx9/%D0%BC%D0%BE%D0%B9-%D1%81%D0%B0%D0%B9%D1%82?type=design&mode=design&t=Y0i269JiyKKzRKyW-0) с использованием:
+Одностраничный [сайт](https://foxy-desu.github.io/polina-design/), выполненный по [макету в Figma](https://www.figma.com/file/JH09ZNOStHlEJs9RI9iGx9/%D0%BC%D0%BE%D0%B9-%D1%81%D0%B0%D0%B9%D1%82?type=design&mode=design&t=Y0i269JiyKKzRKyW-0) с использованием:
 
   - React
   - React-dom
